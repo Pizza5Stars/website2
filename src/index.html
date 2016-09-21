@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html ng-app="app" ng-controller="AppCtrl">
+<head>
+    <meta charset="UTF-8">
+
+    <!--custom styles-->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Bootstrap CDN-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/flatly/bootstrap.min.css" rel="stylesheet">
+
+    <!-- font awesome from BootstrapCDN -->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+    <title ng-bind="pageTitle"></title>
+</head>
+<body>
+
+<div class="container">
+    <div class="navbar navbar-default">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" ng-init="menuCollapsed = true"
+                    ng-click="menuCollapsed = ! menuCollapsed">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="navbar-brand">
+                Pizza5Stars
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" collapse="menuCollapsed">
+            <ul class="nav navbar-nav">
+                <li ui-sref-active="active">
+                    <a href ui-sref="home">
+                        <i class="fa fa-home"></i> Home
+                    </a>
+                </li>
+                <li ng-hide="currentUser" ui-sref-active="active">
+                    <a href ui-sref="register">
+                        Register
+                    </a>
+                </li>
+                <li ng-hide="currentUser" ui-sref-active="active">
+                    <a href ui-sref="login">
+                        Login
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" ng-show="currentUser" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> {{currentUser.firstName}} <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li ui-sref-active="active">
+                            <a href  ng-click="logout()">
+                                <i class="fa fa-sign-out"></i> Logout
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container" ui-view="main"></div>
+
+</body>
+
+<!--Angular-->
+<script src=../vendor/angular/angular.js></script>
+<script src="../vendor/angular-animate/angular-animate.js"></script>
+
+<!--UI Router-->
+<script src="../vendor/angular-ui-router/release/angular-ui-router.js"></script>
+
+<!--Checklist Model-->
+<script src="../vendor/checklist-model/checklist-model.js"></script>
+
+<!--UI Bootstrap-->
+<script src="../vendor/angular-bootstrap/ui-bootstrap.js"></script>
+
+<!-- automatically injected by gulp task "index">
+<!-- inject:js -->
+<script src="common/services/crud.js"></script>
+<script src="common/services/auth.js"></script>
+<script src="app/register/register.js"></script>
+<script src="app/login/login.js"></script>
+<script src="app/home/home.js"></script>
+<script src="app/config.js"></script>
+<script src="app/app.js"></script>
+<!-- endinject -->
+
+</html>
+
