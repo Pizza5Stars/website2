@@ -1,5 +1,5 @@
 angular.module('app.config', [])
-    .constant('API_URL', 'http://localhost:8080')
+    .constant('API_URL', 'http://localhost:1337')
 
     .constant('USER_ROLES', {
         all: '*',
