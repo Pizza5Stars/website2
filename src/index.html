@@ -7,18 +7,20 @@
     <link href="css/style.css" rel="stylesheet">
 
     <!-- Bootstrap CDN-->
-    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/flatly/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <!-- font awesome from BootstrapCDN -->
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
     <title ng-bind="pageTitle"></title>
 </head>
+
 <body>
 
 <div class="container">
-    <div class="navbar navbar-default">
-        <div class="navbar-header">
+    <div class="navbar navbar-inverse">
+    <div class="navbar-header">
             <button type="button" class="navbar-toggle" ng-init="menuCollapsed = true"
                     ng-click="menuCollapsed = ! menuCollapsed">
                 <span class="sr-only">Toggle navigation</span>
@@ -26,17 +28,21 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
+
+
+        <a href ui-sref="home">
             <div class="navbar-brand">
-                Pizza5Stars
+                <span class="pizza_header">Pizza</span> <span class="five_header">5</span> <span class="stars_header">Stars</span>
             </div>
+            </a>
         </div>
+
+
+
+
         <div class="collapse navbar-collapse" collapse="menuCollapsed">
-            <ul class="nav navbar-nav">
-                <li ui-sref-active="active">
-                    <a href ui-sref="home">
-                        <i class="fa fa-home"></i> Home
-                    </a>
-                </li>
+            <ul class="nav navbar-nav pull-right">
+
                 <li ng-hide="currentUser" ui-sref-active="active">
                     <a href ui-sref="register">
                         Register
@@ -59,8 +65,34 @@
                 </li>
             </ul>
         </div>
+        </div>
+    <div class="row menu_pizza">
+        <div class="menu_pizza1">
+            <div class="col-sm-6 col-md-4">
+                <a href ui-sref="createpizza"><div class="thumbnail1">
+                    Create my pizza
+                </div>
+            </div></a>
+
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail2">
+                    <span id="me">Me</span><span id="nu">nu</span>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail3">
+                    Pizza profile
+                </div>
+            </div>
+        </div>
     </div>
+
+
 </div>
+
+
+
 
 <div class="container" ui-view="main"></div>
 
@@ -88,6 +120,8 @@
 <script src="app/home/home.js"></script>
 <script src="app/config.js"></script>
 <script src="app/app.js"></script>
+<script src="app/createpizza.js"></script>
+
 <!-- endinject -->
 
 </html>

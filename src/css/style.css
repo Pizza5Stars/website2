@@ -1,0 +1,203 @@
+body{
+    background-color: grey;
+}
+
+
+.menu_pizza{
+    padding-bottom: 10px;
+
+
+}
+.menu_pizza1{
+    margin-left: 15%;
+
+}
+
+
+#me{
+    color:red;
+}
+#nu{
+    color:green;
+}
+.thumbnail1{
+    font-family: Avenir;
+    height: 110px;
+    width: 180px;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 30px;
+    color: #FFFFFF;
+    border-radius: 30px;
+    background-color: red;
+    border-color: #f2f2f2;
+}
+.thumbnail2{
+    font-family: Avenir;
+    height: 110px;
+    width: 180px;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 30px;
+    color: #FFFFFF;
+    border-radius: 30px;
+    background-color: #f2f2f2;
+    background-color: #f2f2f2;
+;
+    border-color: #f2f2f2;
+}
+.thumbnail3{
+    font-family: Avenir;
+    height: 110px;
+    width: 180px;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 30px;
+    color: #FFFFFF;
+    border-radius: 30px;
+    background-color: green;
+    border-color: #f2f2f2;
+}
+
+
+.thumbnail:hover{
+    background-color: #ff4d4d;
+
+}
+
+
+.best_rated_pizza{
+    border: black;
+
+
+}
+.pizza_header{
+    color: red;
+}
+.stars_header{
+    color: #008000;
+}
+.five_header{
+    color: white;
+}
+.pizza_rated_image{
+    width: 180px;
+}
+.panel_pizza_rated{
+    width: 80%;
+    height: 30%;
+    margin-left: 10%;
+
+}
+.stars_rated{
+    color: #FFCC00;
+}
+.size_pizza{
+    width: 30%;
+}
+.label_size{
+    font-size: 30px;
+    color: red;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+}
+
+.pizza_description{
+    font-style: italic;
+}
+
+.pizza_publisher{
+    font-style: italic;
+    font-size: 10px;
+}
+
+
+.form_pizza_location{
+    background-color: #D3D3D3;
+    width: 60%;
+    margin-left: 20%;
+    padding-left: 4%;
+    padding-right: 4%;
+
+    border-radius: 20px;
+    padding-bottom: 5%;
+
+}
+#location_zip{
+    width: 40%;
+}
+#location{
+    font-size: 30px;
+    color: #006400;
+}
+
+.label_sauce{
+    font-size: 30px;
+    color: green;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+}
+.label_cheese{
+    font-size: 30px;
+    color: red;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+
+}
+.label_meat{
+    font-size: 30px;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+}
+.label_vegetables{
+    font-size: 30px;
+    color: green;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+}
+.cheese_pizza{
+    width: 30%;
+}
+
+.container_create{
+    width: 80%;
+    margin-left: 15%;
+
+}
+.label_dough{
+    font-size: 30px;
+    color:  #ffffff;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+
+}
+.dough_pizza{
+    width: 30%;
+}
+.label_vegetables{
+    font-size: 30px;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+}
+.price_pizza{
+    margin-left: 75%;
+    margin-top: 2%;
+    text-align: center;
+}
+#price_pizza{
+    font-size: 20px;
+    color: red;
+    margin-top: 10%;
+}
+.container_create_pizza{
+    margin-top: -10%;
+}
+#exampleInputAmount{
+    background-color: white;
+    box-shadow: 3px;
+    border-color: black;
+}
+.dollar{
+    border-color: black;
+}

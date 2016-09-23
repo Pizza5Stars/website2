@@ -3,6 +3,7 @@ var app = angular.module('app', [
         'app.register',
         'app.login',
         'app.config',
+        'app.createpizza',
         'services.auth',
         'services.crud',
         'ui.bootstrap',
