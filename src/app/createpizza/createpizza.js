@@ -1,13 +1,12 @@
 angular.module('app.createpizza', [
-    'services.crud',
     'ui.router'
 ])
 
     .config(function config($stateProvider) {
         $stateProvider.state('createpizza', {
-            url: '/createPizza',
+            url: '/createpizza',
             views: {
-                "main": {
+                "other": {
                     controller: 'CreatePizzaCtrl',
                     templateUrl: 'app/createpizza/createpizza.tpl.html'
 

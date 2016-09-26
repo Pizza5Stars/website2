@@ -13,6 +13,7 @@ var app = angular.module('app', [
         $urlRouterProvider.otherwise('/home');
     })
 
+
     .config(['$httpProvider', function ($httpProvider) {
         $httpProvider.interceptors.push('authInterceptor');
     }])

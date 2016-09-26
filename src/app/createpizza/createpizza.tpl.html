@@ -21,7 +21,12 @@
     <div class="container_create_pizza">
 
         <div class="row">
-            <img src="pizza-3.png" alt="Smiley face" height="42" width="42" class="pull-left">
+
+
+
+
+        <div ng-init="size = 'assets/pizza-3.png'">
+            <img ng-src="{{size}}" alt="Size" height="42" width="42" class="pull-left">
             <label class="col-sm-3 control-label label_size">Size :</label>
             <select class="col-sm-9 form-control size_pizza">
                 <option>Small</option>
@@ -31,10 +36,12 @@
 
 
         </div>
+            </div>
         <HR class="separator">
 
         <div class="row">
-            <img src="pizza-slice.png" alt="Smiley face" height="42" width="42" class="pull-left">
+            <div ng-init="dough = 'assets/pizza-slice.png'">
+            <img ng-src="{{dough}}" alt="Dough" height="42" width="42" class="pull-left">
 
             <label class="col-sm-3 control-label label_dough">Dough :</label>
             <select class="col-sm-9 form-control dough_pizza">
@@ -42,10 +49,13 @@
                 <option>crusty dough</option>
             </select>
         </div>
+            </div>
         <HR class="separator">
 
         <div class="row">
-            <img src="suaces-bottle.png" alt="Smiley face" height="42" width="42" class="pull-left">
+            <div ng-init="sauce = 'assets/suaces-bottle.png'">
+
+            <img ng-src="{{sauce}}" alt="Sauce" height="42" width="42" class="pull-left">
 
             <label class="col-sm-3 control-label label_sauce">Sauce :</label>
             <div class="checkbox">
@@ -63,11 +73,14 @@
                 </label>
             </div>
         </div>
+            </div>
         <HR class="separator">
 
 
         <div class="row">
-            <img src="piece-of-cheese.png" alt="Smiley face" height="42" width="42" class="pull-left">
+            <div ng-init="cheese = 'assets/piece-of-cheese.png'">
+
+            <img ng-src="{{cheese}}" alt="Cheese" height="42" width="42" class="pull-left">
 
             <label class="col-sm-3 control-label label_cheese">Cheese :</label>
 
@@ -86,12 +99,15 @@
                 </label>
             </div>
         </div>
+            </div>
 
 
         <HR class="separator">
 
         <div class="row">
-            <img src="ham.png" alt="Smiley face" height="42" width="42" class="pull-left">
+            <div ng-init="meat = 'assets/ham.png'">
+
+            <img ng-src="{{meat}}" alt="Meat" height="42" width="42" class="pull-left">
 
             <label class="col-sm-3 control-label label_meat">Meat :</label>
             <div class="checkbox">
@@ -109,10 +125,12 @@
                 </label>
             </div>
         </div>
+            </div>
         <HR class="separator">
 
         <div class="row">
-            <img src="salad.png" alt="Smiley face" height="42" width="42" class="pull-left">
+            <div ng-init="vegetables = 'assets/salad.png'">
+            <img ng-src="{{vegetables}}" alt="Vegetables" height="42" width="42" class="pull-left">
 
             <label class="col-sm-3 control-label label_vegetables">Vegetables :</label>
 
@@ -143,6 +161,7 @@
                 </label>
             </div>
         </div>
+            </div>
     </div>
 
 
