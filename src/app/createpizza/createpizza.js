@@ -6,7 +6,7 @@ angular.module('app.createpizza', [
         $stateProvider.state('createpizza', {
             url: '/createpizza',
             views: {
-                "other": {
+                "main": {
                     controller: 'CreatePizzaCtrl',
                     templateUrl: 'app/createpizza/createpizza.tpl.html'
 

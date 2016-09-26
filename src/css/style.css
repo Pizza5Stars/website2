@@ -191,7 +191,8 @@ body{
     margin-top: 10%;
 }
 .container_create_pizza{
-    margin-top: -10%;
+    width: 80%;
+    margin-left: 10%;
 }
 #exampleInputAmount{
     background-color: white;
