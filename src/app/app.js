@@ -5,6 +5,7 @@ var app = angular.module('app', [
         'app.config',
         'app.createpizza',
         'app.pizzaprofile',
+        'app.pizzamenu',
         'services.auth',
         'services.crud',
         'ui.bootstrap',
