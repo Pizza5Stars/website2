@@ -93,7 +93,7 @@ body{
     color: #FFCC00;
 }
 .size_pizza{
-    width: 30%;
+    width: 2%;
 }
 .label_size{
     font-size: 30px;
@@ -181,14 +181,11 @@ body{
 
 }
 .price_pizza{
-    margin-left: 75%;
-    margin-top: 2%;
     text-align: center;
 }
 #price_pizza{
     font-size: 20px;
     color: red;
-    margin-top: 10%;
 }
 .container_create_pizza{
     width: 80%;

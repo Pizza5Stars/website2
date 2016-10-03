@@ -1,22 +1,4 @@
 <div class="container">
-    <div class="price_pizza">
-
-        <label id="price_pizza">Price of your pizza:</label>
-        </br>
-        </br>
-
-        <fieldset disabled>
-            <form class="form-inline">
-                <div class="form-group">
-
-                    <div class="input-group">
-                        <div class="input-group-addon dollar">$</div>
-                        <input type="text" class="form-control" id="exampleInputAmount" placeholder="Price">
-                    </div>
-                </div>
-            </form>
-        </fieldset>
-    </div>
 
     <div class="container_create_pizza">
 
@@ -28,7 +10,7 @@
         <div ng-init="size = 'assets/pizza-3.png'">
             <img ng-src="{{size}}" alt="Size" height="42" width="42" class="pull-left">
             <label class="col-sm-3 control-label label_size">Size :</label>
-            <select class="col-sm-9 form-control size_pizza">
+            <select class="form-control size_pizza">
                 <option>Small</option>
                 <option>Medium</option>
                 <option>Large</option>
@@ -40,15 +22,16 @@
         <HR class="separator">
 
         <div class="row">
-            <div ng-init="dough = 'assets/pizza-slice.png'">
+            <div ng-init="dough = 'assets/pizza-slice.png'" >
             <img ng-src="{{dough}}" alt="Dough" height="42" width="42" class="pull-left">
+            </div>
+
 
             <label class="col-sm-3 control-label label_dough">Dough :</label>
-            <select class="col-sm-9 form-control dough_pizza">
+            <select class="col-sm-3 form-control dough_pizza">
                 <option>dough with cheese</option>
                 <option>crusty dough</option>
             </select>
-        </div>
             </div>
         <HR class="separator">
 
@@ -162,10 +145,30 @@
             </div>
         </div>
             </div>
+        <HR class="separator">
+
     </div>
 
 
-    <HR class="separator">
+
+    <div class="price_pizza">
+
+        <label id="price_pizza">Price of your pizza:</label>
+        </br>
+        </br>
+
+        <fieldset disabled>
+            <form class="form-inline">
+                <div class="form-group">
+
+                    <div class="input-group">
+                        <div class="input-group-addon dollar">$</div>
+                        <input type="text" class="form-control" id="exampleInputAmount" placeholder="Price">
+                    </div>
+                </div>
+            </form>
+        </fieldset>
+    </div>
     <button type="button" class="btn btn-danger btn-lg pull-right">Order it</button>
 
 
