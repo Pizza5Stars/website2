@@ -1,7 +1,14 @@
 body{
-    background-color: grey;
+background-image: url("http://reyesnypizza.com/images/background.jpg");
+    background-size: 100%;
+    background-attachment: fixed;
 }
 
+.container{
+    background-color:  #f2f2f2;
+    opacity: 80%;
+    width: 70%;
+}
 
 .menu_pizza{
     padding-bottom: 10px;
@@ -9,7 +16,7 @@ body{
 
 }
 .menu_pizza1{
-    margin-left: 15%;
+    margin-left: 5%;
 
 }
 
@@ -41,8 +48,7 @@ body{
     font-size: 30px;
     color: #FFFFFF;
     border-radius: 30px;
-    background-color: #f2f2f2;
-    background-color: #f2f2f2;
+    background-color: white;
 ;
     border-color: #f2f2f2;
 }
@@ -93,7 +99,7 @@ body{
     color: #FFCC00;
 }
 .size_pizza{
-    width: 2%;
+    width: 60%;
 }
 .label_size{
     font-size: 30px;
@@ -173,7 +179,7 @@ body{
 
 }
 .dough_pizza{
-    width: 30%;
+    width: 60%;
 }
 .label_vegetables{
     font-size: 30px;
@@ -198,4 +204,15 @@ body{
 }
 .dollar{
     border-color: black;
+}
+
+.container_pizza_profile{
+    width: 80%;
+    margin-left: 10%;
+
+}
+
+.nav{
+    background-repeat: no-repeat;
+
 }
