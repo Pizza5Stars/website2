@@ -8,6 +8,7 @@ background-image: url("http://reyesnypizza.com/images/background.jpg");
     background-color:  #f2f2f2;
     opacity: 80%;
     width: 70%;
+
 }
 
 .menu_pizza{
@@ -212,7 +213,8 @@ background-image: url("http://reyesnypizza.com/images/background.jpg");
 
 }
 
-.nav{
-    background-repeat: no-repeat;
 
+
+#zip_code_input{
+    width: 100px;
 }
