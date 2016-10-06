@@ -17,6 +17,7 @@ angular.module('app.createpizza', [
     })
 
     .controller('CreatePizzaCtrl', function CreatePizza($scope) {
+        $scope.ingredients = CrudService.getIngredients();
     });
 
 
