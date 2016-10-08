@@ -1,4 +1,5 @@
 angular.module('app.pizzamenu', [
+    'services.crud',
     'ui.router'
 ])
 
@@ -16,7 +17,8 @@ angular.module('app.pizzamenu', [
         });
     })
 
-    .controller('PizzaMenuCtrl', function PizzaProfile($scope) {
+    .controller('PizzaMenuCtrl', function PizzaMenu($scope) {
+        $scope.pizza = CrudService.getPizza();
     });
 
 

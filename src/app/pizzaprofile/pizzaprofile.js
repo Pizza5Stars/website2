@@ -1,4 +1,5 @@
 angular.module('app.pizzaprofile', [
+    'services.crud',
     'ui.router'
 ])
 
@@ -16,7 +17,13 @@ angular.module('app.pizzaprofile', [
         });
     })
 
-    .controller('PizzaProfileCtrl', function PizzaProfile($scope) {
+    .controller('PizzaProfileCtrl', function PizzaProfile($scope, $state, CrudService) {
+        $scope.addresses = function (address) {
+            CrudService.createAddress(address).then(function () {
+                alert('Address successfully saved');
+            });
+        };
+
     });
 
 

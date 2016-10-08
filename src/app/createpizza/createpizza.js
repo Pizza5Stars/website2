@@ -1,4 +1,5 @@
 angular.module('app.createpizza', [
+    'services.crud',
     'ui.router'
 ])
 

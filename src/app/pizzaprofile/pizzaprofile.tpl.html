@@ -15,11 +15,6 @@
 
 
     });
-
-
-
-
-
 </script>
 
 <div class="container_pizza_profile">
@@ -27,13 +22,10 @@
 </br>
 
 
-
-
-
     <div class="row">
         <div class="col-sm-3">
 <ul class="nav nav-pills nav-stacked nav-static">
-    <li class="active"><a data-toggle="pill" href="/pizzaprofile#account_setting">Account settings</a></li>
+    <li><a data-toggle="pill" href="/pizzaprofile#account_setting">Account settings</a></li>
     <li><a data-toggle="pill" href="/pizzaprofile#adress">Adress</a></li>
 </ul>
             </div>
@@ -68,26 +60,29 @@
         <h3>Saved adress</h3>
         <button type="button" class="btn btn-danger btn-lg" id="add_loc_but">Add a location</button>
 </div>
-        <div class="add_location">
+
+
+
+        <form class="add_location" ng-submit="addresses(address)" name="adressForm">
 
             <div class="form-group row">
-                <label for="street_input" class="col-sm-4 col-form-label">Street adress*: </label>
+                <label for="street" class="col-sm-4 col-form-label">Street adress*: </label>
                 <div class="col-sm-8">
-                    <input class="form-control" type="text" placeholder="Street adress" id="street_input">
+                    <input required ng-model="address.street" class="form-control" type="text" placeholder="Street adress" id="street">
                 </div>
             </div>
 
             <div class="form-group row">
-                <label for="city_input" class="col-sm-4 col-form-label">City* : </label>
+                <label for="city" class="col-sm-4 col-form-label">City* : </label>
                 <div class="col-sm-8">
-                    <input class="form-control" type="text"  placeholder="City" id="city_input">
+                    <input required ng-model="address.city" class="form-control" type="text"  placeholder="City" id="city">
                 </div>
             </div>
 
             <div class="form-group row">
-                <label for="zip_code_input" class="col-sm-4  col-form-label">Zip Code* : </label>
+                <label for="zipcode" class="col-sm-4  col-form-label">Zip Code* : </label>
                 <div class="col-sm-3">
-                    <input class="form-control" type="text" placeholder="Zip Code" id="zip_code_input">
+                    <input required ng-model="address.zipcode" class="form-control" type="text" placeholder="Zip Code" id="zipcode">
                 </div>
                 <label for="state_input" class="col-sm-2  col-form-label">State* : </label>
                 <div class="col-sm-3">
@@ -103,18 +98,20 @@
 
 
             <div class="form-group row">
-                <label for="tel_input" class="col-sm-4  col-form-label">Phone number* : </label>
+                <label for="phone" class="col-sm-4  col-form-label">Phone number* : </label>
                 <div class="col-sm-8">
-                    <input class="form-control" type="tel" placeholder="Phone number" id="tel_input">
+                    <input required ng-model="address.phone" class="form-control" type="tel" placeholder="Phone number" id="phone">
                 </div>
             </div>
 
 
             <button type="button" class="btn btn-secondary btn-lg" id="cancel_add_loc">Cancel</button>
-            <button type="button" class="btn btn-danger btn-lg" id="save_adress">Save adress</button>
+            <button type="submit" class="btn btn-danger btn-lg" id="save_adress" value="Submit">Save adress</button>
 
-
+</form>
         </div>
+</div>
+
 
 
     </div>

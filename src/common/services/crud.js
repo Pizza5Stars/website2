@@ -7,5 +7,11 @@ angular.module('services.crud', ['app.config'])
             getIngredients: function () {
                 return $http.get(API_URL + '/ingredients');
             },
+            createAddress: function (address) {
+                return $http.post(API_URL + '/address', address, {headers: {'Content-Type': 'application/json'}});
+            },
+            getPizza: function () {
+                return $http.get(API_URL + '/pizza');
+            },
         }
     });

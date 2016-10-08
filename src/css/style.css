@@ -11,6 +11,29 @@ background-image: url("http://reyesnypizza.com/images/background.jpg");
 
 }
 
+footer{
+    background-color:  #404040;
+    width: 70%;
+    height: 50px;
+    margin-left: 15%;
+    margin-top: -1%;
+    color: darkgrey;
+}
+
+#colonne1 {
+    text-align: center;
+    float: left;
+    width: 50%;
+}
+
+
+#centre {
+    text-align: center;
+    overflow: hidden;
+    border-left: 1px solid darkgrey;
+    border-right: 1px solid darkgrey;
+}
+
 .menu_pizza{
     padding-bottom: 10px;
 
@@ -91,9 +114,9 @@ background-image: url("http://reyesnypizza.com/images/background.jpg");
     width: 180px;
 }
 .panel_pizza_rated{
-    width: 80%;
+    width: 90%;
     height: 30%;
-    margin-left: 10%;
+    margin-left: 6%;
 
 }
 .stars_rated{
@@ -218,3 +241,4 @@ background-image: url("http://reyesnypizza.com/images/background.jpg");
 #zip_code_input{
     width: 100px;
 }
+
