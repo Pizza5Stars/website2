@@ -14,24 +14,25 @@ background-image: url("http://reyesnypizza.com/images/background.jpg");
 footer{
     background-color:  #404040;
     width: 70%;
-    height: 50px;
+    height: auto;
     margin-left: 15%;
-    margin-top: -1%;
+    padding-top: 10px;
     color: darkgrey;
+    display: inline-block;
 }
 
-#colonne1 {
+.LeftColonne {
+    display: inline-block;
     text-align: center;
-    float: left;
     width: 50%;
+    float: left;
 }
 
-
-#centre {
+.RightColonne {
+    display: inline-block;
     text-align: center;
-    overflow: hidden;
-    border-left: 1px solid darkgrey;
-    border-right: 1px solid darkgrey;
+    width: 50%;
+    float: right;
 }
 
 .menu_pizza{
