@@ -19,9 +19,7 @@ angular.module('app.pizzaprofile', [
 
     .controller('PizzaProfileCtrl', function PizzaProfile($scope, $state, CrudService) {
         $scope.addresses = function (address) {
-            CrudService.createAddress(address).then(function () {
-                alert('Address successfully saved');
-            });
+            CrudService.createAddress(address).then();
         };
 
     });
