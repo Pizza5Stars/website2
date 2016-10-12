@@ -47,9 +47,9 @@ var app = angular.module('app', [
         };
 
         $scope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
-            if (angular.isDefined(toState.data.pageTitle)) {
+            /*if (angular.isDefined(toState.data.pageTitle)) {
                 $scope.pageTitle = toState.data.pageTitle + ' | pizza5stars';
-            }
+            }*/
         });
 
         $scope.$on("$stateChangeStart", function (event, toState, toParams, fromState, fromParams) {

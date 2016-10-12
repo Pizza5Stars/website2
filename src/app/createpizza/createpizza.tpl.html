@@ -70,7 +70,7 @@
             <div class="checkbox">
                 <label>
                     <input type="checkbox"  value="option1" aria-label="">
-                    {{ingredients[1]}}
+                    {{selectedIngredients[1].name}}
                 </label>
                 <label>
                     <input type="checkbox" value="option1" aria-label="">
@@ -93,20 +93,10 @@
             <img ng-src="{{meat}}" alt="Meat" height="42" width="42" class="pull-left">
 
             <label class="col-sm-4 control-label label_meat">Meat :</label>
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox"  value="option1" aria-label="">
-                    Ham
-                </label>
-                <label>
-                    <input type="checkbox" value="option1" aria-label="">
-                    Bacon
-                </label>
-                <label>
-                    <input type="checkbox" value="option1" aria-label="">
-                    Chicken
-                </label>
-            </div>
+                <body ng-app="app.createpizza" ng-controller="CreatePizzaCtrl">
+                    <select  ng-model = "selectedIngredients" ng-options="ingredient.name for ingredient in ingredients">
+                    </select>
+                </body>
         </div>
             </div>
         <HR class="separator">

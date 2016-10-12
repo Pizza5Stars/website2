@@ -13,13 +13,14 @@ angular.module('app.createpizza', [
 
                 }
             },
-            data: {pageTitle: 'Create your pizza'}
+           // data: {pageTitle: 'Create your pizza'}
         });
     })
 
-    .controller('CreatePizzaCtrl', function CreatePizza($scope) {
-        $scope.ingredients = CrudService.getIngredients();
-    });
-
-
-
+    .controller('CreatePizzaCtrl', ['$scope','CrudService', function CreatePizza($scope, CrudService) {
+        //$scope.ingredients = [{"name": "Chicken", "price": 1, "category": "Meat"}, {"name": "Dough 1", "price": 1, "category": "Dough"}, {"name": "Dough 2", "price": 1, "category": "Dough"}];
+        $scope.ingredients = [];
+        CrudService.getIngredients().then(function(response){
+            $scope.ingredients = response.data;
+        });
+            }]);
