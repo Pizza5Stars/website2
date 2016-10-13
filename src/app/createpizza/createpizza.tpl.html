@@ -9,11 +9,10 @@
         <div ng-init="size = 'assets/pizza-3.png'">
             <img ng-src="{{size}}" alt="Size" height="42" width="42" class="pull-left">
             <label class="col-sm-4 control-label label_size">Size :</label>
-            <select class="form-control size_pizza">
-                <option>Small</option>
-                <option>Medium</option>
-                <option>Large</option>
+            <body ng-app="app.createpizza" ng-controller="CreatePizzaCtrl">
+            <select ng-model = "selectedSize" ng-options="ingredient.name for ingredient in getIngredientsByCategories('Size')">
             </select>
+            </body>
 
 
         </div>
@@ -27,10 +26,10 @@
 
 
             <label class="col-sm-4 control-label label_dough">Dough :</label>
-            <select class="col-sm-3 form-control dough_pizza">
-                <option>dough with cheese</option>
-                <option>crusty dough</option>
+            <body ng-app="app.createpizza" ng-controller="CreatePizzaCtrl">
+            <select ng-model = "selectedDough" ng-options="ingredient.name for ingredient in getIngredientsByCategories('Dough')">
             </select>
+            </body>
             </div>
         <HR class="separator">
 
@@ -40,21 +39,10 @@
             <img ng-src="{{sauce}}" alt="Sauce" height="42" width="42" class="pull-left">
 
             <label class="col-sm-4 control-label label_sauce">Sauce :</label>
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox"  value="option1" aria-label="">
-                    Carbonara
-
-                </label>
-                <label>
-                    <input type="checkbox" value="option1" aria-label="">
-                    Ketchup
-                </label>
-                <label>
-                    <input type="checkbox" value="option1" aria-label="">
-                    Carbonara
-                </label>
-            </div>
+                <body ng-app="app.createpizza" ng-controller="CreatePizzaCtrl">
+                <select ng-model = "selectedSauce" ng-options="ingredient.name for ingredient in getIngredientsByCategories('Sauce')">
+                </select>
+                </body>
         </div>
             </div>
         <HR class="separator">
@@ -67,20 +55,10 @@
 
             <label class="col-sm-4 control-label label_cheese">Cheese :</label>
 
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox"  value="option1" aria-label="">
-                    {{selectedIngredients[1].name}}
-                </label>
-                <label>
-                    <input type="checkbox" value="option1" aria-label="">
-                    Ketchup
-                </label>
-                <label>
-                    <input type="checkbox" value="option1" aria-label="">
-                    Carbonara
-                </label>
-            </div>
+                <body ng-app="app.createpizza" ng-controller="CreatePizzaCtrl">
+                <select ng-model = "selectedCheese" ng-options="ingredient.name for ingredient in getIngredientsByCategories('Cheese')">
+                </select>
+                </body>
         </div>
             </div>
 
@@ -94,7 +72,7 @@
 
             <label class="col-sm-4 control-label label_meat">Meat :</label>
                 <body ng-app="app.createpizza" ng-controller="CreatePizzaCtrl">
-                    <select ng-model = "selectedIngredients" ng-options="ingredient.name for ingredient in ingredients">
+                    <select ng-model = "selectedMeat" ng-options="ingredient.name for ingredient in getIngredientsByCategories('Meat')">
                     </select>
                 </body>
         </div>
@@ -107,32 +85,10 @@
 
             <label class="col-sm-4 control-label label_vegetables">Vegetables :</label>
 
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox"  value="option1" aria-label="">
-                    Tomato
-                </label>
-                <label>
-                    <input type="checkbox" value="option1" aria-label="">
-                    Pickles
-                </label>
-                <label>
-                    <input type="checkbox" value="option1" aria-label="">
-                    Onions
-                </label>
-                <label>
-                    <input type="checkbox" value="option1" aria-label="">
-                    Salad
-                </label>
-                <label>
-                    <input type="checkbox" value="option1" aria-label="">
-                    Pineapple
-                </label>
-                <label>
-                    <input type="checkbox" value="option1" aria-label="">
-                    Olives
-                </label>
-            </div>
+                <body ng-app="app.createpizza" ng-controller="CreatePizzaCtrl">
+                <select ng-model = "selectedVegetables" ng-options="ingredient.name for ingredient in getIngredientsByCategories('Vegetable')">
+                </select>
+                </body>
         </div>
             </div>
         <HR class="separator">

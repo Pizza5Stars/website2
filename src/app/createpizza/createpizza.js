@@ -49,7 +49,6 @@ angular.module('app.createpizza', [
             //$scope.suggestions = suggestions.data;
             //$scope.sizes = sizes.data;
             //$scope.selectedSize = sizes.data[0];
-            $scope.price = 0;
         }
 
         function getIngredientByName(name) {
@@ -88,9 +87,33 @@ angular.module('app.createpizza', [
             }
         };
 
+        $scope.findPriceByName = function (name) {
+            for (var i = 0; i < $scope.ingredients.length; i++) {
+                if ($scope.ingredients[i].name === name) {
+                    return $scope.ingredients[i].price;
+                }
+            }
+        };
+
         $scope.resetIngredients = function () {
             $scope.selectedIngredients.splice(0, $scope.selectedIngredients.length);
         };
+
+        /*function getTotal() {
+            $scope.selectedIngredients = [];
+            $scope.value = function (isSelected, ingredient) {
+                if (isSelected == true) {
+                    $scope.selectedIngredients.push(ingredient);
+                } else {
+                    console.log(ingredient.name);
+                    angular.forEach($scope.selectedIngredients, function (ingredientRmv, $index) {
+                        if (ingredientRmv.name == ingredient.name) {
+                            $scope.selectedIngredients.splice($index, 1);
+                        }
+                    })
+                }
+            }
+        };*/
     });
 
 
