@@ -19,6 +19,8 @@ angular.module('app.pizzamenu', [
 
     .controller('PizzaMenuCtrl', function PizzaMenu($scope) {
         $scope.pizza = CrudService.getPizza();
+        $scope.setPizza(pizza);
+
     });
 
 
