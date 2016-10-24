@@ -58,12 +58,36 @@
     <div id="adress" class="tab-pane fade">
         <div class="saved_location">
         <h3>Saved adress</h3>
-        <button type="button" class="btn btn-danger btn-lg" id="add_loc_but">Add a location</button>
+            <input class="form-control" type="email" value="{{currentAdress.street}}" id="email_input">
+
+            <button type="button" class="btn btn-danger btn-lg" id="add_loc_but">Add a location</button>
 </div>
 
 
 
-        <form class="add_location" ng-submit="addresses(address)" name="adressForm">
+        <form class="add_location" ng-submit="createAddress(address)" name="adressForm">
+
+            <div class="form-group row">
+                <label for="firstname" class="col-sm-4 col-form-label">First Name*: </label>
+                <div class="col-sm-8">
+                    <input required ng-model="address.firstname" class="form-control" type="text" placeholder="First name" id="firstname">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="lastname" class="col-sm-4 col-form-label">Last Name*: </label>
+                <div class="col-sm-8">
+                    <input required ng-model="address.lastname" class="form-control" type="text" placeholder="Last Name" id="lastname">
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+                <label for="housenumber" class="col-sm-4 col-form-label">House number*: </label>
+                <div class="col-sm-4">
+                    <input required ng-model="address.housenumber" class="form-control" type="text" placeholder="house number" id="housenumber">
+                </div>
+            </div>
 
             <div class="form-group row">
                 <label for="street" class="col-sm-4 col-form-label">Street adress*: </label>
