@@ -58,14 +58,16 @@
     <div id="adress" class="tab-pane fade">
         <div class="saved_location">
         <h3>Saved adress</h3>
-            <input class="form-control" type="email" value="{{currentAdress.street}}" id="email_input">
+            {{currentAddress.street}}
+            {{currentAddress.firstname}}
+
 
             <button type="button" class="btn btn-danger btn-lg" id="add_loc_but">Add a location</button>
 </div>
 
 
 
-        <form class="add_location" ng-submit="createAddress(address)" name="adressForm">
+        <form class="add_location" ng-submit="addAddressToCustomer(address)" name="adressForm">
 
             <div class="form-group row">
                 <label for="firstname" class="col-sm-4 col-form-label">First Name*: </label>

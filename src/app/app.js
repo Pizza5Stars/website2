@@ -40,6 +40,11 @@ var app = angular.module('app', [
             $scope.currentUser = user;
         };
 
+        $scope.setCurrentAddress = function (address) {
+            $scope.currentAddress = address;
+        };
+
+
         $scope.logout = function () {
             AuthService.logout();
             $state.go('home');

@@ -18,8 +18,15 @@ angular.module('app.pizzaprofile', [
     })
 
     .controller('PizzaProfileCtrl', function PizzaProfile($scope, $state, CrudService) {
-        $scope.createAddress = function (address) {
-            CrudService.createAddress(address).then();
+        $scope.addAddressToCustomer = function (address) {
+            CrudService.addAddressToCustomer(address).then(
+                $state.go('home')
+
+            );
+
+            $scope.setCurrentAddress(address);
+
+
 
 
         };
