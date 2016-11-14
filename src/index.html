@@ -59,6 +59,16 @@
                 <li class="dropdown">
                     <a href="#" ng-show="currentUser" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> {{currentUser.firstName}} <span class="caret"></span></a>
                     <ul class="dropdown-menu">
+                        <li>
+                            <a href ui-sref="pizzaprofile">
+                                My profile
+                            </a>
+                        </li>
+                        <li>
+                            <a href ui-sref="my_pizzas">
+                                My saved pizza
+                            </a>
+                        </li>
                         <li ui-sref-active="active">
                             <a href  ng-click="logout()">
                                 <i class="fa fa-sign-out"></i> Logout
@@ -86,9 +96,9 @@
             </div>
 
             <div class="col-sm-6 col-md-4">
-                <a href ui-sref="pizzaprofile">
+                <a href ui-sref="my_pizzas">
                 <div class="thumbnail3">
-                    Pizza profile
+                    My Pizzas
                 </div>
                     </a>
             </div>
@@ -146,6 +156,7 @@
 <script src="app/createpizza/createpizza.js"></script>
 <script src="app/pizzaprofile/pizzaprofile.js"></script>
 <script src="app/pizzamenu/pizzamenu.js"></script>
+<script src="app/my_pizzas/my_pizzas.js"></script>
 
 
 <!-- endinject -->

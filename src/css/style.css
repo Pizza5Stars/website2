@@ -133,6 +133,12 @@ footer{
 
 }
 
+.label_pizza_name{
+    font-size: 30px;
+    color: red;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
 .pizza_description{
     font-style: italic;
 }
@@ -236,10 +242,38 @@ footer{
     margin-left: 10%;
 
 }
-
+.price_pizza_saved{
+    font-size: 15px;
+}
 
 
 #zip_code_input{
     width: 100px;
 }
 
+.save_it_button{
+    margin-right: 1%;
+}
+
+.container_my_pizzas{
+    width: 80%;
+    margin-left: 10%;
+
+}
+
+.my_pizzas_title_saved{
+    color: green;
+    font-weight: bold;
+}
+
+.my_pizzas_title_ordered{
+    color: red;
+    font-weight: bold;
+
+}
+
+.pizza_detail_title{
+    color: red;
+    font-weight: bold;
+    text-align: center;
+}
