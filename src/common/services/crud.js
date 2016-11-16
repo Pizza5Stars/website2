@@ -38,5 +38,9 @@ angular.module('services.crud', ['app.config'])
             getAddressesFromcustomer: function () {
                 return $http.get(API_URL + '/customer/addresses');
             },
+
+            getPizzaFromcustomer: function () {
+                return $http.get(API_URL + '/customer/pizzas');
+            }
         }
     });

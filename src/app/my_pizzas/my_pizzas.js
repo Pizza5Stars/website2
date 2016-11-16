@@ -13,7 +13,12 @@ angular.module('app.my_pizzas', [
 
                 }
             },
-            data: {pageTitle: 'My Pizzas'}
+            data: {pageTitle: 'My Pizzas'},
+            resolve : {
+                pizzas: function (CrudService) {
+                    return CrudService.getPizzaFromcustomer();
+                }
+            }
         });
     })
 
@@ -31,8 +36,9 @@ angular.module('app.my_pizzas', [
         });
     })
 
-    .controller('MyPizzasCtrl', function MyPizzas($scope) {
+    .controller('MyPizzasCtrl', function MyPizzas($scope, $state, pizzas, CrudService) {
 
+        console.log(pizzas);
 
     });
 

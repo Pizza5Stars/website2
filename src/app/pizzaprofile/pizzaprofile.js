@@ -13,9 +13,11 @@ angular.module('app.pizzaprofile', [
 
                 }
             },
-            data: {pageTitle: 'Pizza profile'}
+            data: {pageTitle: 'Pizza profile'},
+
         });
     })
+
 
     .controller('PizzaProfileCtrl', function PizzaProfile($scope, $state, CrudService) {
         $scope.addAddressToCustomer = function (address) {
@@ -24,7 +26,7 @@ angular.module('app.pizzaprofile', [
 
             );
 
-            $scope.setCurrentAddress(address);
+            $scope.getAddressesFromcustomer(address);
 
 
 
