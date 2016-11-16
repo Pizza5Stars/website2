@@ -4,4 +4,9 @@
 
 <div ng-repeat="pizzaSuggestion in pizzaSuggestions">
     {{pizzaSuggestion.name}}
+    <div ng-repeat="ingredient in pizzaSuggestion.ingredients">
+        {{ingredient}}
+
+
+    </div>
 </div>

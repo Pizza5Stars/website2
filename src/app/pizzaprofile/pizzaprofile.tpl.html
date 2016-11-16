@@ -58,12 +58,10 @@
     <div id="adress" class="tab-pane fade">
         <div class="saved_location">
         <h3>Saved adress</h3>
-            {{currentAddress.street}}
-            {{currentAddress.firstname}}
-            <body ng-app="app.pizzaprofile" ng-controller="PizzaProfileCtrl">
-            <select ng-model = "selectedSize" ng-options="ingredient.name for ingredient in getIngredientsByCategories('Size')">
-            </select>
-            </body>
+            <div ng-repeat="address in myaddresses">
+                {{address.street}}
+            </div>
+
 
 
             <button type="button" class="btn btn-danger btn-lg" id="add_loc_but">Add a location</button>
