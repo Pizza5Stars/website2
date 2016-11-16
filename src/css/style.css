@@ -277,3 +277,14 @@ footer{
     font-weight: bold;
     text-align: center;
 }
+
+
+
+/*====================Pizza Menu=========*/
+
+
+.pizzamenu_title{
+    color: red;
+    font-weight: bold;
+   text-align: center;
+}

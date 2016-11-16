@@ -13,13 +13,18 @@ angular.module('app.pizzamenu', [
 
                 }
             },
-            data: {pageTitle: 'Pizza menu'}
+            data: {pageTitle: 'Pizza menu'},
+            resolve: {
+                pizzaSuggestions: function (CrudService) {
+                    return CrudService.getPizzaSuggestions();
+                }
+            }
         });
     })
 
-    .controller('PizzaMenuCtrl', function PizzaMenu($scope) {
-        $scope.pizza = CrudService.getPizza();
-        $scope.setPizza(pizza);
+    .controller('PizzaMenuCtrl', function PizzaMenu($scope, $state, pizzaSuggestions, CrudService) {
+        console.log(pizzaSuggestions);
+        $scope.pizzaSuggestions = pizzaSuggestions.data;
 
     });
 
