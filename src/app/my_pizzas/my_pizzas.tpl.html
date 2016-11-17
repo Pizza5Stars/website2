@@ -6,14 +6,17 @@
         <div class="list-group">
             <div ng-repeat="pizza in pizzas">
                 <div data-toggle="collapse" data-target="#{{pizza.id}}" class="list-group-item">
-                    <span class="badge price_pizza_saved">14$</span>
-                    <h4 class="list-group-item-heading">{{pizza.name}}</h4>
+                    <img src="assets/pizza-3.png" alt="Size" class="pull-left">
+                    <h4 class="list-group-item-heading" id="pizza_name_saved">  {{pizza.name}}</h4>
 
                 </div>
 
                 <div  id="{{pizza.id}}" class="collapse">
                     <div class="pizza_details">
-                    <span ng-repeat="ingredient in pizza.ingredients" class="list-group-item-text">{{ingredient}} </span>
+                       <span class="size_title_saved">Size:</span> <span class="sizeName_pizza_">{{pizza.sizeName}}</span><br>
+                    <span class="ingredients_title_saved">Ingredients : </span><span ng-repeat="ingredient in pizza.ingredients" class="list-group-item-text"> {{ingredient}},</span>
+                        <button type="button" class="btn btn-danger btn-lg pull-right">Order it</button><br><br>
+
                     </div>
                 </div>
 

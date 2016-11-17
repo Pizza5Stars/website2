@@ -45,7 +45,10 @@ angular.module('services.crud', ['app.config'])
 
             getPizzaSuggestions: function () {
                 return $http.get(API_URL + '/pizza/suggestions');
-            }
+            },
 
-        }
+            getReceiptFromcustomer: function () {
+                return $http.get(API_URL + '/customer/receipts');
+            }
+    }
     });

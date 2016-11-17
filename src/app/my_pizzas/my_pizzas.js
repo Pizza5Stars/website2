@@ -15,7 +15,7 @@ angular.module('app.my_pizzas', [
             },
             data: {pageTitle: 'My Pizzas'},
             resolve : {
-                mypizzas: function (CrudService) {
+                mypizzas_saved: function (CrudService) {
                     return CrudService.getPizzaFromcustomer();
                 }
             }
@@ -23,9 +23,10 @@ angular.module('app.my_pizzas', [
     })
 
 
-    .controller('MyPizzasCtrl', function MyPizzas($scope, $state, mypizzas, CrudService) {
+    .controller('MyPizzasCtrl', function MyPizzas($scope, $state, mypizzas_saved, CrudService) {
+        $scope.pizzas = mypizzas_saved.data;
 
-        $scope.pizzas = mypizzas.data;
+
 
     });
 
