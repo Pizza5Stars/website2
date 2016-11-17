@@ -91,10 +91,6 @@ footer{
 }
 
 
-.thumbnail:hover{
-    background-color: #ff4d4d;
-
-}
 
 
 .best_rated_pizza{
@@ -285,6 +281,32 @@ footer{
     color: whitesmoke;
 }
 .pizza_details{
-    background-color:   #d9d9d9;
+    background-color:   #cccccc;
+    border-bottom-right-radius: 1em;
+    border-bottom-left-radius: 1em;
+    font-weight: bold;
+    opacity: 0.8;
 
+
+}
+.size_title_saved{
+    font-size: 20px;
+    color: red;
+    font-weight: bold;
+    margin-left: 2%;
+
+}
+.sizeName_pizza_{
+    text-transform: uppercase;
+}
+.ingredients_title_saved{
+    font-size: 20px;
+    color: green;
+    font-weight: bold;
+    margin-left: 2%;
+
+}
+#pizza_name_saved{
+    margin-left: 10%;
+    font-weight: bold;
 }
