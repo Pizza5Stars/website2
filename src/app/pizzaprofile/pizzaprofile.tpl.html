@@ -59,7 +59,14 @@
         <div class="saved_location">
         <h3>Saved adress</h3>
             <div ng-repeat="address in myaddresses">
-                {{address.street}}
+                <div id="my_addresses">
+                <b>{{address.firstname}} {{address.lastname}}</b> </br>
+                {{address.housenumber}} {{address.street}}</br>
+                {{address.city}}, {{address.zipcode}}</br>
+                    <i class="fa fa-phone" aria-hidden="true"></i> {{address.phone}}
+                </div>
+                <br>
+
             </div>
 
 
@@ -111,16 +118,6 @@
                 <label for="zipcode" class="col-sm-4  col-form-label">Zip Code* : </label>
                 <div class="col-sm-3">
                     <input required ng-model="address.zipcode" class="form-control" type="text" placeholder="Zip Code" id="zipcode">
-                </div>
-                <label for="state_input" class="col-sm-2  col-form-label">State* : </label>
-                <div class="col-sm-3">
-                    <select class="form-control" id="state_input">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
                 </div>
             </div>
 

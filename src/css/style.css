@@ -283,8 +283,18 @@ footer{
 /*====================Pizza Menu=========*/
 
 
-.pizzamenu_title{
-    color: red;
-    font-weight: bold;
-   text-align: center;
+.pizzamenu_title {
+            color: red;
+            font-weight: bold;
+            text-align: center;
+        }
+
+#my_addresses{
+    background-color:  grey;
+    border-radius: 20px;
+    text-align: center;
+    color: whitesmoke;
+}
+.pizza_details{
+    background-color:   #d9d9d9;
 }

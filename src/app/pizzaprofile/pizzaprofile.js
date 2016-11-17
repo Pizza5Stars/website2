@@ -26,8 +26,9 @@ angular.module('app.pizzaprofile', [
 
     .controller('PizzaProfileCtrl', function PizzaProfile($scope, $state, myaddresses, CrudService) {
         $scope.addAddressToCustomer = function (address) {
-            CrudService.addAddressToCustomer(address).then(
-                $state.go('home')
+            CrudService.addAddressToCustomer(address).then(function () {
+                alert('Your address has been successfully added!');
+                $state.go('home')}
 
             );
         };
