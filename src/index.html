@@ -23,7 +23,7 @@
 
 <div class="container">
     <div class="navbar navbar-inverse">
-    <div class="navbar-header">
+        <div class="navbar-header">
             <button type="button" class="navbar-toggle" ng-init="menuCollapsed = true"
                     ng-click="menuCollapsed = ! menuCollapsed">
                 <span class="sr-only">Toggle navigation</span>
@@ -32,7 +32,6 @@
                 <span class="icon-bar"></span>
             </button>
 
-
         <a href ui-sref="home">
             <div class="navbar-brand">
                 <span class="pizza_header">Pizza</span> <span class="five_header">5</span> <span class="stars_header">Stars</span>
@@ -40,12 +39,8 @@
             </a>
         </div>
 
-
-
-
         <div class="collapse navbar-collapse" collapse="menuCollapsed">
             <ul class="nav navbar-nav pull-right">
-
                 <li ng-hide="currentUser" ui-sref-active="active">
                     <a href ui-sref="register">
                         Register
@@ -78,35 +73,33 @@
                 </li>
             </ul>
         </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6 col-md-4 ">
+            <a href ui-sref="createpizza">
+                <button type="button" class="btn btn-perso create-pizza-btn col-xs-10 col-xs-offset-1">
+                    <span class="white">Create my pizza</button>
+                </button>
+            </a>
         </div>
-    <div class="row menu_pizza">
-        <div class="menu_pizza1">
-            <div class="col-sm-6 col-md-4">
-                <a href ui-sref="createpizza"><div class="thumbnail1">
-                    Create my pizza
-                </div>
-            </div></a>
-
-            <div class="col-sm-6 col-md-4">
-                <a href ui-sref="pizzamenu">
-                    <div class="thumbnail2">
-                        <span id="me">Me</span><span id="nu">nu</span>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-sm-6 col-md-4">
-                <a href ui-sref="my_pizzas">
-                <div class="thumbnail3">
-                    My Pizzas
-                </div>
-                    </a>
-            </div>
+        <div class="col-sm-6 col-md-4 ">
+            <a href ui-sref="pizzamenu">
+                <button type="button" class="btn btn-perso menu-pizza-btn col-xs-10 col-xs-offset-1">
+                    <span class="me">Me</span><span class="nu">nu</span>
+                </button>
+            </a>
+        </div>
+        <div class="col-sm-6 col-md-4 ">
+            <a href ui-sref="my_pizzas">
+                <button type="button" class="btn btn-perso my_pizza-pizza-btn col-xs-10 col-xs-offset-1">
+                   <span class="white">My Pizzas</span>
+                </button>
+            </a>
         </div>
     </div>
+
     <div class="main_container" ui-view="main"></div>
-
-
 
 </div>
 <footer>
