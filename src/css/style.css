@@ -358,7 +358,6 @@ footer{
     border-bottom-right-radius: 1em;
     border-bottom-left-radius: 1em;
     font-weight: bold;
-    opacity: 0.8;
 }
 .size_title_saved{
     font-size: 20px;
@@ -377,7 +376,10 @@ footer{
     margin-left: 2%;
 
 }
-#pizza_name_saved{
-    margin-left: 10%;
+.pizza_name_saved{
     font-weight: bold;
+}
+
+.cursor{
+    cursor: pointer;
 }

@@ -3,11 +3,15 @@
         <h1 class="my_pizzas_title_saved">My saved pizza</h1>
 
 
-        <div class="list-group">
+        <div class="list-group row">
             <div ng-repeat="pizza in pizzas">
-                <div data-toggle="collapse" data-target="#{{pizza.id}}" class="list-group-item">
-                    <img src="assets/pizza-3.png" alt="Size" class="pull-left">
-                    <h4 class="list-group-item-heading" id="pizza_name_saved">  {{pizza.name}}</h4>
+                <div data-toggle="collapse" data-target="#{{pizza.id}}" class="cursor list-group-item">
+                    <img src="assets/pizza-3.png" alt="Size" class="col-xs-1">
+                    <span>
+                        <h4 class="list-group-item-heading pizza_name_saved col-xs-offset-2 col-xs-8">{{pizza.name}}
+                        </h4>
+                        <i class="fa fa-arrow-down fa-2x " aria-hidden="true"></i>
+                    </span>
 
                 </div>
 
