@@ -1,14 +1,5 @@
 <div class="container_create_pizza">
-    <HR class="separator">
 
-    <div class="row">
-        <label class="col-sm-6 label_pizza_name">Name of your pizza :</label>
-        <div class="col-sm-6"><input  type="text" class="form-control" name="label_name">    </div>
-
-
-    </div>
-
-    <HR class="separator">
 
     <div class="row">
 
@@ -20,114 +11,124 @@
             <label class="col-sm-4 control-label label_size">Size :</label>
             <body ng-app="app.createpizza" ng-controller="CreatePizzaCtrl">
             <select ng-model = "selectedSize" ng-options="ingredient.name for ingredient in getIngredientsByCategories('Size')">
+                <option value=""></option>
             </select>
             </body>
 
 
         </div>
-            </div>
-        <HR class="separator">
+    </div>
+    <HR class="separator">
 
-        <div class="row">
-            <div ng-init="dough = 'assets/pizza-slice.png'" >
+    <div class="row">
+        <div ng-init="dough = 'assets/pizza-slice.png'" >
             <img ng-src="{{dough}}" alt="Dough" height="42" width="42" class="pull-left">
-            </div>
+        </div>
 
 
-            <label class="col-sm-4 control-label label_dough">Dough :</label>
-            <body ng-app="app.createpizza" ng-controller="CreatePizzaCtrl">
-            <select ng-model = "selectedDough" ng-options="ingredient.name for ingredient in getIngredientsByCategories('Dough')">
-            </select>
-            </body>
-            </div>
-        <HR class="separator">
+        <label class="col-sm-4 control-label label_dough">Dough :</label>
+        <body ng-app="app.createpizza" ng-controller="CreatePizzaCtrl">
+        <select ng-model = "selectedDough" ng-options="ingredient.name for ingredient in getIngredientsByCategories('Dough')">
+            <option value=""></option>
+        </select>
+        </body>
+    </div>
+    <HR class="separator">
 
-        <div class="row">
-            <div ng-init="sauce = 'assets/suaces-bottle.png'">
+    <div class="row">
+        <div ng-init="sauce = 'assets/suaces-bottle.png'">
 
             <img ng-src="{{sauce}}" alt="Sauce" height="42" width="42" class="pull-left">
 
             <label class="col-sm-4 control-label label_sauce">Sauce :</label>
-                <body ng-app="app.createpizza" ng-controller="CreatePizzaCtrl">
-                <select ng-model = "selectedSauce" ng-options="ingredient.name for ingredient in getIngredientsByCategories('Sauce')">
-                </select>
-                </body>
+            <body ng-app="app.createpizza" ng-controller="CreatePizzaCtrl">
+            <select ng-model = "selectedSauce" ng-options="ingredient.name for ingredient in getIngredientsByCategories('Sauce')">
+                <option value=""></option>
+            </select>
+            </body>
         </div>
-            </div>
-        <HR class="separator">
+    </div>
+    <HR class="separator">
 
 
-        <div class="row">
-            <div ng-init="cheese = 'assets/piece-of-cheese.png'">
+    <div class="row">
+        <div ng-init="cheese = 'assets/piece-of-cheese.png'">
 
             <img ng-src="{{cheese}}" alt="Cheese" height="42" width="42" class="pull-left">
 
             <label class="col-sm-4 control-label label_cheese">Cheese :</label>
 
-                <body ng-app="app.createpizza" ng-controller="CreatePizzaCtrl">
-                <select ng-model = "selectedCheese" ng-options="ingredient.name for ingredient in getIngredientsByCategories('Cheese')">
-                </select>
-                </body>
+            <body ng-app="app.createpizza" ng-controller="CreatePizzaCtrl">
+            <select ng-model = "selectedCheese" ng-options="ingredient.name for ingredient in getIngredientsByCategories('Cheese')">
+                <option value=""></option>
+            </select>
+            </body>
         </div>
-            </div>
+    </div>
 
 
-        <HR class="separator">
+    <HR class="separator">
 
-        <div class="row">
-            <div ng-init="meat = 'assets/ham.png'">
+    <div class="row">
+        <div ng-init="meat = 'assets/ham.png'">
 
             <img ng-src="{{meat}}" alt="Meat" height="42" width="42" class="pull-left">
 
             <label class="col-sm-4 control-label label_meat">Meat :</label>
-                <body ng-app="app.createpizza" ng-controller="CreatePizzaCtrl">
-                    <select ng-model = "selectedMeat" ng-options="ingredient.name for ingredient in getIngredientsByCategories('Meat')">
-                    </select>
-                </body>
+            <body ng-app="app.createpizza" ng-controller="CreatePizzaCtrl">
+            <select ng-model = "selectedMeat" ng-options="ingredient.name for ingredient in getIngredientsByCategories('Meat')">
+                <option value=""></option>
+            </select>
+            </body>
         </div>
-            </div>
-        <HR class="separator">
+    </div>
+    <HR class="separator">
 
-        <div class="row">
-            <div ng-init="vegetables = 'assets/salad.png'">
+    <div class="row">
+        <div ng-init="vegetables = 'assets/salad.png'">
             <img ng-src="{{vegetables}}" alt="Vegetables" height="42" width="42" class="pull-left">
 
             <label class="col-sm-4 control-label label_vegetables">Vegetables :</label>
 
-                <body ng-app="app.createpizza" ng-controller="CreatePizzaCtrl">
-                <select ng-model = "selectedVegetables" ng-options="ingredient.name for ingredient in getIngredientsByCategories('Vegetable')">
-                </select>
-                </body>
+            <body ng-app="app.createpizza" ng-controller="CreatePizzaCtrl">
+            <select ng-model = "selectedVegetables" ng-options="ingredient.name for ingredient in getIngredientsByCategories('Vegetable')">
+                <option value=""></option>
+            </select>
+            <!--<div ng-dropdown-multiselect = "ybygbtftt" options="exampleVegg" selected-model="selectedVegetables">
+            </div>-->
+            </body>
         </div>
-            </div>
-        <HR class="separator">
-
     </div>
+    <HR class="separator">
+
+</div>
 
 
 
-    <div class="price_pizza">
+<div class="price_pizza">
 
-        <label id="price_pizza">Price of your pizza:</label>
-        </br>
-        </br>
+    <label id="price_pizza">Price of your pizza:</label> ${{selectedSize.price + selectedDough.price + selectedSauce.price + selectedCheese.price + selectedMeat.price + selectedVegetables.price}}
+    </br>
+    </br>
 
-        <fieldset disabled>
-            <form class="form-inline">
-                <div class="form-group">
+    <!--<body ng-app="app.createpizza" ng-controller="CreatePizzaCtrl">
+     <select ng-model = "totalPrice" ng-options="ingredient.price for ingredient in getIngredientsByCategories('Size')">
+    </select>
 
-                    <div class="input-group">
-                        <div class="input-group-addon dollar">$</div>
-                        <input type="text" class="form-control" id="exampleInputAmount" placeholder="Price">
-                    </div>
+    </body> -->
+    <fieldset disabled>
+        <form class="form-inline">
+            <div class="form-group">
+
+                <div class="input-group">
+                    <div class="input-group-addon dollar">$</div>
+                    <input type="text" class="form-control" id="exampleInputAmount" placeholder="Price">
                 </div>
-            </form>
-        </fieldset>
-    </div>
-    <button type="button" class="btn btn-danger btn-lg pull-right">Order it</button>
-    <button type="button" class="btn btn-warning btn-lg pull-right save_it_button">Saved it</button>
-
-
+            </div>
+        </form>
+    </fieldset>
+</div>
+<button type="button" class="btn btn-danger btn-lg pull-right">Order it</button>
 
 
 
