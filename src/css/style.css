@@ -310,6 +310,7 @@ footer{
 
 .card-pizza{
     background: white url('../assets/background-pizza.jpg') no-repeat;
+    background-size: cover;
     border:solid #f2f2f2 20px;
     height: 240px;
     border-radius: 37px;
