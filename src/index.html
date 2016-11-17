@@ -2,9 +2,6 @@
 <html ng-app="app" ng-controller="AppCtrl" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-
-
-
     <!-- Bootstrap CDN-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -18,7 +15,6 @@
 
     <title ng-bind="pageTitle"></title>
 </head>
-
 <body>
 
 <div class="container">
@@ -101,23 +97,23 @@
 
     <div class="main_container" ui-view="main"></div>
 
-</div>
-<footer>
-    <div class="LeftColonne">
-        <div class="follow">Follow us!</div>
-        <div class="social">
-            <i class="fa fa-facebook-square fa-2x"></i>
-            <i class="fa fa-twitter-square fa-2x"></i>
-            <i class="fa fa-google-plus-square fa-2x"></i>
+
+    <footer class="row">
+        <div class="col-xs-6">
+            <p>Follow us!</p>
+            <p class="social-link">
+                <a href="http://facebook.com"><i class="fa fa-facebook-square fa-2x"></i></a>
+                <a href="http://twitter.com"><i class="fa fa-twitter-square fa-2x"></i></a>
+                <a href="http://linkedin.com"><i class="fa fa-linkedin-square fa-2x"></i></a>
+            </p>
         </div>
-    </div>
 
-    <div class="RightColonne">
-        <div class="about">About us</div>
-    </div>
-</footer>
+        <div class="col-offset-xs-6 col-xs-6">
+            <p class="about-us"><a href="#">About us</a></p>
+        </div>
+    </footer>
 
-
+</div>
 
 
 

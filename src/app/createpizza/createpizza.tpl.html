@@ -100,26 +100,23 @@
         </div>
     </div>
     <HR class="separator">
-
 </div>
 
 
 
 <div class="price_pizza">
+    <label>Price of your pizza:</label>
+        ${{selectedSize.price + selectedDough.price + selectedSauce.price + selectedCheese.price + selectedMeat.price + selectedVegetables.price}}
+</div>
 
-    <label id="price_pizza">Price of your pizza:</label> ${{selectedSize.price + selectedDough.price + selectedSauce.price + selectedCheese.price + selectedMeat.price + selectedVegetables.price}}
-    </br>
-    </br>
-
-    <!--<body ng-app="app.createpizza" ng-controller="CreatePizzaCtrl">
+    <!--<div ng-app="app.createpizza" ng-controller="CreatePizzaCtrl">
      <select ng-model = "totalPrice" ng-options="ingredient.price for ingredient in getIngredientsByCategories('Size')">
     </select>
-
-    </body> -->
+    </div> -->
+<div class="price_pizza">
     <fieldset disabled>
         <form class="form-inline">
             <div class="form-group">
-
                 <div class="input-group">
                     <div class="input-group-addon dollar">$</div>
                     <input type="text" class="form-control" id="exampleInputAmount" placeholder="Price">
