@@ -17,16 +17,18 @@ angular.module('app.my_pizzas', [
             resolve : {
                 mypizzas_saved: function (CrudService) {
                     return CrudService.getPizzaFromcustomer();
+                },
+                mypizzas_ordered: function (CrudService) {
+                    return CrudService.getReceiptFromcustomer();
                 }
             }
+
         });
     })
 
 
     .controller('MyPizzasCtrl', function MyPizzas($scope, $state, mypizzas_saved, CrudService) {
         $scope.pizzas = mypizzas_saved.data;
-
-
 
     });
 
