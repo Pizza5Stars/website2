@@ -10,7 +10,8 @@ var app = angular.module('app', [
         'services.auth',
         'services.crud',
         'ui.bootstrap',
-        'ui.router'])
+        'ui.router',
+        'am.multiselect'])
 
     .config(function appConfig($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/home');

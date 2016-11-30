@@ -18,11 +18,8 @@
         <div ng-init="size = 'assets/pizza-3.png'">
             <img ng-src="{{size}}" alt="Size" height="42" width="42" class="pull-left">
             <label class="col-sm-4 control-label label_size">Size :</label>
-            <body ng-app="app.createpizza" ng-controller="CreatePizzaCtrl">
-            <select ng-model = "selectedSize" ng-options="ingredient.name for ingredient in getIngredientsByCategories('Size')">
-                <option value=""></option>
-            </select>
-            </body>
+            <am-multiselect class="input-lg" multiple="false" ng-model="selectedSize" template-url="../vendor/amitava82-angular-multiselect/dist/multiselect.tmpl.html" ms-header="Select Your Size" options="ingredient.name for ingredient in sizes" change="selected()">
+            </am-multiselect>
 
 
         </div>
@@ -36,11 +33,8 @@
 
 
         <label class="col-sm-4 control-label label_dough">Dough :</label>
-        <body ng-app="app.createpizza" ng-controller="CreatePizzaCtrl">
-        <select ng-model = "selectedDough" ng-options="ingredient.name for ingredient in getIngredientsByCategories('Dough')">
-            <option value=""></option>
-        </select>
-        </body>
+        <am-multiselect class="input-lg" multiple="false" ng-model="selectedDough" template-url="../vendor/amitava82-angular-multiselect/dist/multiselect.tmpl.html" ms-header="Select Your Dough" options="ingredient.name for ingredient in getIngredientsByCategories('Dough')" change="selected()">
+        </am-multiselect>
     </div>
     <HR class="separator">
 
@@ -50,11 +44,8 @@
             <img ng-src="{{sauce}}" alt="Sauce" height="42" width="42" class="pull-left">
 
             <label class="col-sm-4 control-label label_sauce">Sauce :</label>
-            <body ng-app="app.createpizza" ng-controller="CreatePizzaCtrl">
-            <select ng-model = "selectedSauce" ng-options="ingredient.name for ingredient in getIngredientsByCategories('Sauce')">
-                <option value=""></option>
-            </select>
-            </body>
+            <am-multiselect class="input-lg" multiple="false" ng-model="selectedSauce" template-url="../vendor/amitava82-angular-multiselect/dist/multiselect.tmpl.html" ms-header="Select Your Sauce" options="ingredient.name for ingredient in getIngredientsByCategories('Sauce')" change="selected()">
+            </am-multiselect>
         </div>
     </div>
     <HR class="separator">
@@ -67,11 +58,8 @@
 
             <label class="col-sm-4 control-label label_cheese">Cheese :</label>
 
-            <body ng-app="app.createpizza" ng-controller="CreatePizzaCtrl">
-            <select ng-model = "selectedCheese" ng-options="ingredient.name for ingredient in getIngredientsByCategories('Cheese')">
-                <option value=""></option>
-            </select>
-            </body>
+            <am-multiselect class="input-lg" multiple="true" ms-selected="{{selectedCheese.length}} Cheese(s) selected" ng-model="selectedCheese" template-url="../vendor/amitava82-angular-multiselect/dist/multiselect.tmpl.html" ms-header="Select Your Cheese" options="ingredient.name for ingredient in getIngredientsByCategories('Cheese')" change="selected()">
+            </am-multiselect>
         </div>
     </div>
 
@@ -84,11 +72,8 @@
             <img ng-src="{{meat}}" alt="Meat" height="42" width="42" class="pull-left">
 
             <label class="col-sm-4 control-label label_meat">Meat :</label>
-            <body ng-app="app.createpizza" ng-controller="CreatePizzaCtrl">
-            <select ng-model = "selectedMeat" ng-options="ingredient.name for ingredient in getIngredientsByCategories('Meat')">
-                <option value=""></option>
-            </select>
-            </body>
+            <am-multiselect class="input-lg" multiple="true" ms-selected="{{selectedIngredients.length}} Meat(s) selected" ng-model="selectedIngredients" template-url="../vendor/amitava82-angular-multiselect/dist/multiselect.tmpl.html" ms-header="Select Your Meat" options="ingredient.name for ingredient in getIngredientsByCategories('Meat')" change="selected()">
+            </am-multiselect>
         </div>
     </div>
     <HR class="separator">
@@ -99,13 +84,8 @@
 
             <label class="col-sm-4 control-label label_vegetables">Vegetables :</label>
 
-            <body ng-app="app.createpizza" ng-controller="CreatePizzaCtrl">
-            <select ng-model = "selectedVegetables" ng-options="ingredient.name for ingredient in getIngredientsByCategories('Vegetable')">
-                <option value=""></option>
-            </select>
-            <!--<div ng-dropdown-multiselect = "ybygbtftt" options="exampleVegg" selected-model="selectedVegetables">
-            </div>-->
-            </body>
+            <am-multiselect class="input-lg" multiple="true" ms-selected="{{selectedIngredients.length}} Vegetable(s) selected" ng-model="selectedIngredients" template-url="../vendor/amitava82-angular-multiselect/dist/multiselect.tmpl.html" ms-header="Select Your Vegetable" options="ingredient.name for ingredient in getIngredientsByCategories('Vegetable')" change="selected()">
+            </am-multiselect>
         </div>
     </div>
     <HR class="separator">
@@ -128,7 +108,7 @@
             <div class="form-group">
                 <div class="input-group">
                     <div class="input-group-addon dollar">$</div>
-                    <input type="text" class="form-control" id="exampleInputAmount" placeholder="Price">
+                    <input type="text" class="form-control" id="exampleInputAmount" placeholder="Price" value={{totalPrice}}>
                 </div>
             </div>
         </form>

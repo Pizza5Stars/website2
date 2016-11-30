@@ -20,7 +20,7 @@ angular.module('app.createpizza', [
                     return CrudService.getIngredients();
                 },
                 sizes: function (CrudService) {
-                    /*return CrudService.getSizes();*/
+                    return CrudService.getSizes();
                 },
                 suggestions: function (CrudService) {
                     /*return CrudService.getSuggestions();*/
@@ -45,6 +45,8 @@ angular.module('app.createpizza', [
 
         function initScopeVariables() {
             $scope.selectedIngredients = [];
+            $scope.sizes = sizes.data;
+            $scope.totalPrice = 0;
             // To get all types of cheese -> $scope.selectableCheese = $scope.getIngredientsByCategories(["Cheese"]);
             $scope.ingredients = ingredients.data;
             //$scope.suggestions = suggestions.data;
@@ -125,6 +127,20 @@ angular.module('app.createpizza', [
         $scope.resetIngredients = function () {
             $scope.selectedIngredients.splice(0, $scope.selectedIngredients.length);
         };
+
+        $scope.calculatePrice = function() {
+            $scope.totalPrice = 0;
+            for (var i = 0; i < selectedIngredients.length; i++){
+                $scope.totalPrice = $scope.totalPrice + $scope.findPriceByName(newIngredients[i]);
+            }
+            return totalPrice;
+            /*$scope.$watchCollection('selectedIngredients', function(newIngredients, oldIngredients, scope) {
+             for (var i = newIngredients.length; i > oldIngredients.length; i--){
+             $scope.totalPrice = $scope.totalPrice + $scope.findPriceByName(newIngredients[i]);
+             }
+             })*/
+        };
+
 
         /* $scope.calculatePriceOfPizza = function (pizza) {
          $scope.price = 0;
