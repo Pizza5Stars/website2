@@ -30,40 +30,22 @@ angular.module('app.createpizza', [
     })
 
     .controller('CreatePizzaCtrl', function CreatePizza($scope, $state, ingredients, suggestions, sizes, CrudService) {
-        //.controller('CreatePizzaCtrl', ['$scope','CrudService', function CreatePizza($scope, CrudService) {
-        /*$scope.ingredients = [{"name": "Chicken", "price": 1, "category": "Meat"}, {"name": "Dough 1", "price": 1, "category": "Dough"}, {"name": "Dough 2", "price": 1, "category": "Dough"}];
-         $scope.ingredients = [];
-         CrudService.getIngredients().then(function(response){
-         console.log(response);
-         $scope.ingredients = response.data;
-         console.log($scope.ingredients);
-         });*/
-
-        console.log(ingredients);
         initScopeVariables();
-        //var ingredients = [];
 
         function initScopeVariables() {
             $scope.selectedIngredients = [];
+            $scope.selectedSize = [];
+            $scope.selectedDough = [];
+            $scope.selectedSauce = [];
+            $scope.selectedMeat = [];
+            $scope.selectedCheese = [];
+            $scope.selectedVegetables = [];
+
             $scope.sizes = sizes.data;
-            $scope.totalPrice = 0;
-            // To get all types of cheese -> $scope.selectableCheese = $scope.getIngredientsByCategories(["Cheese"]);
             $scope.ingredients = ingredients.data;
+            $scope.totalPrice = 0;
             //$scope.suggestions = suggestions.data;
-            //$scope.sizes = sizes.data;
-            //$scope.selectedSize = sizes.data[0];
-            //$scope.ingredientSettings = {enableSearch: true}
             $scope.selectVegetables = [];
-            $scope.exampleVegg = [{
-                "label": "Alabama",
-                "id": "AL"
-            }, {
-                "label": "Alaska",
-                "id": "AK"
-            }, {
-                "label": "American Samoa",
-                "id": "AS"
-            }]
             $scope.dropdownSetting = {
                 scrollable: true,
                 scrollableHeight : '200px'
@@ -129,50 +111,27 @@ angular.module('app.createpizza', [
         };
 
         $scope.calculatePrice = function() {
-            $scope.totalPrice = 0;
-            for (var i = 0; i < selectedIngredients.length; i++){
-                $scope.totalPrice = $scope.totalPrice + $scope.findPriceByName(newIngredients[i]);
+            $scope.selectedIngredients = $scope.selectedCheese.concat($scope.selectedSauce).concat($scope.selectedMeat).concat($scope.selectedVegetables);
+            if(!angular.isArray($scope.selectedDough)){
+                $scope.selectedIngredients.push($scope.selectedDough)
             }
-            return totalPrice;
-            /*$scope.$watchCollection('selectedIngredients', function(newIngredients, oldIngredients, scope) {
-             for (var i = newIngredients.length; i > oldIngredients.length; i--){
-             $scope.totalPrice = $scope.totalPrice + $scope.findPriceByName(newIngredients[i]);
-             }
-             })*/
+            $scope.totalPrice = 0;
+            for (var i = 0; i < $scope.selectedIngredients.length; i++){
+                $scope.totalPrice = $scope.totalPrice + $scope.findPriceByName($scope.selectedIngredients[i]);
+            }
+
+            // getSize price factor and multiply it with the total
+            var priceFactor;
+            for (i = 0; i < $scope.sizes.length; i++) {
+                if ($scope.sizes[i].name === $scope.selectedSize) {
+                    priceFactor = $scope.sizes[i].priceFactor;
+                }
+            }
+            $scope.totalPrice *= priceFactor;
+
+            console.log($scope.selectedSize);
         };
 
-
-        /* $scope.calculatePriceOfPizza = function (pizza) {
-         $scope.price = 0;
-         for (var i = 0; i < pizza.ingredients.length; i++) {
-         var ingredientName = pizza.ingredients[i];
-         var ingredient = getIngredientByName(ingredientName);
-         $scope.price += ingredient.price;
-         }
-         var priceFactor;
-         for(i = 0; i < $scope.sizes.length; i++) {
-         if ($scope.sizes[i].name === pizza.sizeName){
-         priceFactor = $scope.sizes[i].priceFactor;
-         }
-         $scope.price *= priceFactor;
-         }
-         }
-
-         /*function getTotal() {
-         $scope.selectedIngredients = [];
-         $scope.value = function (isSelected, ingredient) {
-         if (isSelected == true) {
-         $scope.selectedIngredients.push(ingredient);
-         } else {
-         console.log(ingredient.name);
-         angular.forEach($scope.selectedIngredients, function (ingredientRmv, $index) {
-         if (ingredientRmv.name == ingredient.name) {
-         $scope.selectedIngredients.splice($index, 1);
-         }
-         })
-         }
-         }
-         };*/
     });
 
 
