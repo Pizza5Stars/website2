@@ -33,14 +33,14 @@
     <h1 class="my_pizzas_title_ordered">My ordered pizza</h1>
             <div ng-repeat="pizza in orderedpizzas">
 
-                            <div class="list-group">
-                                <div class="list-group-item row">
-                                <img src="assets/pizza-3.png" alt="Size" class="col-xs-1">
-                                <h4 ng-repeat="name in pizza.pizzas" class="list-group-item-heading pizza_name_ordered col-xs-offset-2 col-xs-8">{{name}}</h4>
-                                <span class="total_order col-xs-1">{{pizza.total}}</span>
-                                </div>
+                            <ul class="list-group">
+                                <li class="list-group-item row">
+                                    <span class="tag tag-default tag-pill float-xs-right total_order">{{pizza.total}}$</span>
+                                    <img src="assets/pizza-3.png" alt="Size" class="col-xs-1">
+                                    <h4 ng-repeat="name in pizza.pizzas" class="list-group-item-heading pizza_name_ordered col-xs-offset-2 col-xs-8">{{name}}</h4>
+                                </li>
 
-                        </div>
+                        </ul>
             </div>
 
 

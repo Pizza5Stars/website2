@@ -214,6 +214,10 @@ footer{
 .pizza_name_ordered{
     font-weight: bold;
 }
+.total_order{
+    font-weight: bold;
+    font-size: 17px;
+}
 .cursor{
     cursor: pointer;
 }
