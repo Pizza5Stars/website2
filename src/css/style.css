@@ -211,6 +211,9 @@ footer{
 .pizza_name_saved{
     font-weight: bold;
 }
+.pizza_name_ordered{
+    font-weight: bold;
+}
 .cursor{
     cursor: pointer;
 }

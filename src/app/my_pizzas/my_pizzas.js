@@ -27,8 +27,13 @@ angular.module('app.my_pizzas', [
     })
 
 
-    .controller('MyPizzasCtrl', function MyPizzas($scope, $state, mypizzas_saved, CrudService) {
+    .controller('MyPizzasCtrl', function MyPizzas($scope, $state, mypizzas_saved, mypizzas_ordered, CrudService) {
         $scope.pizzas = mypizzas_saved.data;
+        console.log(mypizzas_ordered);
+        console.log(mypizzas_saved);
+
+        $scope.orderedpizzas = mypizzas_ordered.data;
+
 
     });
 
