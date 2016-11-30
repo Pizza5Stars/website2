@@ -10,11 +10,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <!--custom styles-->
     <link href="css/style.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.js"></script>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-animate.js"></script>
-    <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.14.0.js"></script>
-    <script src="index.js"></script>
     <!-- font awesome from BootstrapCDN -->
     <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
@@ -23,23 +18,6 @@
 <body>
 <div class="container">
 
-    <!--
-    <div class="hide alert alert-success alert-dismissable">
-        <div class="close" data-dismiss="alert" aria-label="close">×</div>
-        <strong>Success!</strong> Your Order has been sent !
-    </div>-->
-
-    <div ng-controller="AppCtrl">
-        <script type="text/ng-template" id="alert.html">
-            <div class="alert" style="background-color:#fa39c3;color:white" role="alert">
-                <div ng-transclude></div>
-            </div>
-        </script>
-
-        <uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
-        <uib-alert template-url="alert.html">A happy alert!</uib-alert>
-        <button type="button" class='btn btn-default' ng-click="addAlert()">Add Alert</button>
-    </div>
 
     <div class="navbar navbar-inverse">
         <div class="navbar-header">
