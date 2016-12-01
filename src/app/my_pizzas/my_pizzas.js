@@ -16,10 +16,10 @@ angular.module('app.my_pizzas', [
             data: {pageTitle: 'My Pizzas'},
             resolve : {
                 mypizzas_saved: function (CrudService) {
-                    return CrudService.getPizzaFromcustomer();
+                    return CrudService.getPizzasFromCustomer();
                 },
                 mypizzas_ordered: function (CrudService) {
-                    return CrudService.getReceiptFromcustomer();
+                    return CrudService.getReceiptsFromCustomer();
                 }
             }
 

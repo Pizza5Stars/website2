@@ -23,8 +23,9 @@ angular.module('app.pizzamenu', [
     })
 
     .controller('PizzaMenuCtrl', function PizzaMenu($scope, $state, pizzaSuggestions, CrudService) {
-        console.log(pizzaSuggestions);
+
         $scope.pizzaSuggestions = pizzaSuggestions.data;
+        console.log($scope.pizzaSuggestions);
 
     });
 
