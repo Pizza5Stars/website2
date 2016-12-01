@@ -16,7 +16,7 @@ angular.module('app.pizzaprofile', [
             data: {pageTitle: 'Pizza profile'},
             resolve : {
                 myaddresses: function (CrudService) {
-                    return CrudService.getAddressesFromcustomer();
+                    return CrudService.getAddressesFromCustomer();
                 }
             }
 
@@ -26,6 +26,7 @@ angular.module('app.pizzaprofile', [
 
     .controller('PizzaProfileCtrl', function PizzaProfile($scope, $state, myaddresses, CrudService) {
         $scope.addAddressToCustomer = function (address) {
+            console.log(address);
             CrudService.addAddressToCustomer(address).then(function () {
                 alert('Your address has been successfully added!');
                 $state.go('home')}
@@ -33,6 +34,7 @@ angular.module('app.pizzaprofile', [
             );
         };
         $scope.myaddresses = myaddresses.data;
+        $scope.address = {}
 
     });
 

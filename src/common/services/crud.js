@@ -30,7 +30,6 @@ angular.module('services.crud', ['app.config'])
                 return $http.post(API_URL + '/customer/pizza', pizza, {headers: {'Content-Type': 'application/json'}});
             },
             addAddressToCustomer: function (address) {
-                console.log(address);
                 return $http.post(API_URL + '/customer/address', address, {headers: {'Content-Type': 'application/json'}});
             },
             createAddress: function (address) {
