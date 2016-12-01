@@ -17,15 +17,35 @@ angular.module('app.pizzamenu', [
             resolve: {
                 pizzaSuggestions: function (CrudService) {
                     return CrudService.getPizzaSuggestions();
+                },
+                pizzas: function (CrudService) {
+                    return CrudService.getPizzasFromCustomer();
                 }
             }
         });
     })
 
-    .controller('PizzaMenuCtrl', function PizzaMenu($scope, $state, pizzaSuggestions, CrudService) {
-
+    .controller('PizzaMenuCtrl', function PizzaMenu($scope, $state, pizzaSuggestions, pizzas, CrudService) {
         $scope.pizzaSuggestions = pizzaSuggestions.data;
-        console.log($scope.pizzaSuggestions);
+        $scope.pizzas = pizzas.data;
+        CrudService.getAddressesFromCustomer().then(function (res) {
+            $scope.addresses = res.data;
+        });
+
+
+        function createOrderObject(id) {
+            return {
+                addressId: $scope.addresses[0].id,
+                pizzaIds: [id]
+            };
+        }
+
+        $scope.addOrderToCustomer = function(id) {
+            var order = createOrderObject(id);
+            CrudService.addOrderToCustomer(order).then(function (res) {
+                alert("Order created");
+            })
+        }
 
     });
 
