@@ -88,11 +88,18 @@ angular.module('app.createpizza', [
                     alert("pizza saved");
                     CrudService.getPizzasFromCustomer().then(function (res) {
                         $scope.pizzas = res.data;
-                        var order = createOrderObject();
-                        CrudService.addOrderToCustomer(order).then(function (res) {
-                            alert("Order created");
-                            $state.go("my_pizzas");
-                        })
+                        if ($scope.addresses.length < 1) {
+                            $state.go("pizzaprofile");
+                            alert("Please add an address first!");
+                        }
+                        else{
+                            var order = createOrderObject();
+                            CrudService.addOrderToCustomer(order).then(function (res) {
+                                alert("Order created");
+                                $state.go("my_pizzas");
+                            })
+                        }
+
                     })
                 });
             }

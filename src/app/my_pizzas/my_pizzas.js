@@ -42,11 +42,18 @@ angular.module('app.my_pizzas', [
         }
 
         $scope.addOrderToCustomer = function(id) {
-            var order = createOrderObject(id);
-            CrudService.addOrderToCustomer(order).then(function (res) {
-                alert("Order created");
-            })
-            $state.reload();
+            if ($scope.addresses.length < 1) {
+                $state.go("pizzaprofile");
+                alert("Please add an address first!");
+            }
+            else{
+                var order = createOrderObject(id);
+                CrudService.addOrderToCustomer(order).then(function (res) {
+                    alert("Order created");
+                })
+                $state.reload();
+            }
+
         }
 
 
