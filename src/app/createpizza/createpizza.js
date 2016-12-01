@@ -80,12 +80,22 @@ angular.module('app.createpizza', [
         }
 
         $scope.addOrderToCustomer = function() {
-            $scope.addPizzaToCustomer();
-            var order = createOrderObject();
-            console.log(order);
-            CrudService.addOrderToCustomer(order).then(function (res) {
-                alert("Order created");
-            })
+            updatePizza();
+            if ($scope.pizza.ingredients.length < 2) {
+                alert("Select at least one ingredient!")
+            } else {
+                CrudService.addPizzaToCustomer($scope.pizza).then(function () {
+                    alert("pizza saved");
+                    CrudService.getPizzasFromCustomer().then(function (res) {
+                        $scope.pizzas = res.data;
+                        var order = createOrderObject();
+                        CrudService.addOrderToCustomer(order).then(function (res) {
+                            alert("Order created");
+                            $state.go("my_pizzas");
+                        })
+                    })
+                });
+            }
         }
 
         function getPizzaIds() {
@@ -96,19 +106,6 @@ angular.module('app.createpizza', [
             return ids;
         }
 
-        $scope.addPizzaToCustomer = function () {
-            updatePizza();
-            if ($scope.pizza.ingredients.length < 2) {
-                alert("Select at least one ingredient!")
-            } else {
-                CrudService.addPizzaToCustomer($scope.pizza).then(function () {
-                    alert("pizza saved");
-                    CrudService.getPizzasFromCustomer().then(function (res) {
-                        $scope.pizzas = res.data;
-                    })
-                });
-            }
-        }
         function updatePizza() {
             $scope.pizza.ingredients = $scope.selectedIngredients;
             $scope.pizza.sizeName = $scope.selectedSize;

@@ -29,10 +29,25 @@ angular.module('app.my_pizzas', [
 
     .controller('MyPizzasCtrl', function MyPizzas($scope, $state, mypizzas_saved, mypizzas_ordered, CrudService) {
         $scope.pizzas = mypizzas_saved.data;
-        console.log(mypizzas_ordered);
-        console.log(mypizzas_saved);
-
         $scope.orderedpizzas = mypizzas_ordered.data;
+        CrudService.getAddressesFromCustomer().then(function (res) {
+            $scope.addresses = res.data;
+        });
+
+        function createOrderObject(id) {
+            return {
+                addressId: $scope.addresses[0].id,
+                pizzaIds: [id]
+            };
+        }
+
+        $scope.addOrderToCustomer = function(id) {
+            var order = createOrderObject(id);
+            CrudService.addOrderToCustomer(order).then(function (res) {
+                alert("Order created");
+            })
+            $state.reload();
+        }
 
 
     });

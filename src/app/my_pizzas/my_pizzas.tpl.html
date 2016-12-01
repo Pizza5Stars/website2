@@ -19,7 +19,7 @@
                     <div class="pizza_details">
                        <span class="size_title_saved">Size:</span> <span class="sizeName_pizza_">{{pizza.sizeName}}</span><br>
                     <span class="ingredients_title_saved">Ingredients : </span><span ng-repeat="ingredient in pizza.ingredients" class="list-group-item-text"> {{ingredient}},</span>
-                        <button type="button" class="btn btn-danger btn-lg pull-right">Order it</button><br><br>
+                        <button type="button" class="btn btn-danger btn-lg pull-right" ng-click="addOrderToCustomer(pizza.id)">Order it</button><br><br>
 
                     </div>
                 </div>

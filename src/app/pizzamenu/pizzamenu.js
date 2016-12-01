@@ -44,6 +44,7 @@ angular.module('app.pizzamenu', [
             var order = createOrderObject(id);
             CrudService.addOrderToCustomer(order).then(function (res) {
                 alert("Order created");
+                $state.go("my_pizzas");
             })
         }
 
