@@ -3,7 +3,7 @@
 
     <div class="row">
         <label class="col-sm-6 label_pizza_name">Name of your pizza :</label>
-        <div class="col-sm-6"><input  type="text" class="form-control" name="label_name">    </div>
+        <div class="col-sm-6"><input  type="text" class="form-control" name="label_name", ng-model="pizzaName">    </div>
 
 
     </div>
@@ -84,13 +84,13 @@
             <div class="form-group">
                 <div class="input-group">
                     <div class="input-group-addon dollar">$</div>
-                    <input type="text" class="form-control" id="exampleInputAmount" placeholder="Price" value={{totalPrice}}>
+                    <input type="text" class="form-control" id="exampleInputAmount" placeholder="Price" value="{{(totalPrice | number:2)}}">
                 </div>
             </div>
         </form>
     </fieldset>
 </div>
-<button type="button" class="btn btn-danger btn-lg pull-right">Order it</button>
+<button type="button" class="btn btn-danger btn-lg pull-right" ng-click="addOrderToCustomer()">Order it</button>
 
 
 

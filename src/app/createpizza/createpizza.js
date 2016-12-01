@@ -22,14 +22,14 @@ angular.module('app.createpizza', [
                 sizes: function (CrudService) {
                     return CrudService.getSizes();
                 },
-                suggestions: function (CrudService) {
-                    /*return CrudService.getSuggestions();*/
+                pizzas: function (CrudService) {
+                    return CrudService.getPizzasFromCustomer();
                 }
             }
         });
     })
 
-    .controller('CreatePizzaCtrl', function CreatePizza($scope, $state, ingredients, suggestions, sizes, CrudService) {
+    .controller('CreatePizzaCtrl', function CreatePizza($scope, $state, ingredients, pizzas, sizes, CrudService) {
         initScopeVariables();
 
         function initScopeVariables() {
@@ -40,10 +40,16 @@ angular.module('app.createpizza', [
             $scope.selectedMeat = [];
             $scope.selectedCheese = [];
             $scope.selectedVegetables = [];
+            $scope.pizza = {ingredients: [], name:$scope.pizzaName, sizeName: $scope.selectedSize.name};
 
             $scope.sizes = sizes.data;
             $scope.ingredients = ingredients.data;
+            $scope.pizzas = pizzas.data;
+            $scope.pizzaName = "";
             $scope.totalPrice = 0;
+            CrudService.getAddressesFromCustomer().then(function (res) {
+                $scope.addresses = res.data;
+            });
             //$scope.suggestions = suggestions.data;
             $scope.selectVegetables = [];
             $scope.dropdownSetting = {
@@ -64,6 +70,49 @@ angular.module('app.createpizza', [
             for (var i = 0; i < $scope.ingredients.length; i++) {
                 $scope.ingredients[i].imagePath = './assets/' + $scope.ingredients[i].name + '.png';
             }
+        }
+
+        function createOrderObject() {
+            return {
+                addressId: $scope.addresses[0].id,
+                pizzaIds: getPizzaIds()
+            };
+        }
+
+        $scope.addOrderToCustomer = function() {
+            $scope.addPizzaToCustomer();
+            var order = createOrderObject();
+            console.log(order);
+            CrudService.addOrderToCustomer(order).then(function (res) {
+                alert("Order created");
+            })
+        }
+
+        function getPizzaIds() {
+            var ids = [];
+            if($scope.pizzas.length >0){
+                ids.push($scope.pizzas[($scope.pizzas.length)-1].id)
+            }
+            return ids;
+        }
+
+        $scope.addPizzaToCustomer = function () {
+            updatePizza();
+            if ($scope.pizza.ingredients.length < 2) {
+                alert("Select at least one ingredient!")
+            } else {
+                CrudService.addPizzaToCustomer($scope.pizza).then(function () {
+                    alert("pizza saved");
+                    CrudService.getPizzasFromCustomer().then(function (res) {
+                        $scope.pizzas = res.data;
+                    })
+                });
+            }
+        }
+        function updatePizza() {
+            $scope.pizza.ingredients = $scope.selectedIngredients;
+            $scope.pizza.sizeName = $scope.selectedSize;
+            $scope.pizza.name = $scope.pizzaName;
         }
 
         $scope.getIngredientsByCategories = function (categories) {
@@ -128,8 +177,6 @@ angular.module('app.createpizza', [
                 }
             }
             $scope.totalPrice *= priceFactor;
-
-            console.log($scope.selectedSize);
         };
 
     });

@@ -26,20 +26,22 @@ angular.module('services.crud', ['app.config'])
             createPizza: function (pizza) {
                 return $http.post(API_URL + '/pizza', pizza, {headers: {'Content-Type': 'application/json'}});
             },
+            addPizzaToCustomer: function (pizza) {
+                return $http.post(API_URL + '/customer/pizza', pizza, {headers: {'Content-Type': 'application/json'}});
+            },
             addAddressToCustomer: function (address) {
                 console.log(address);
                 return $http.post(API_URL + '/customer/address', address, {headers: {'Content-Type': 'application/json'}});
             },
-
             createAddress: function (address) {
                 return $http.post(API_URL + '/address', address, {headers: {'Content-Type': 'application/json'}});
             },
 
-            getAddressesFromcustomer: function () {
+            getAddressesFromCustomer: function () {
                 return $http.get(API_URL + '/customer/addresses');
             },
 
-            getPizzaFromcustomer: function () {
+            getPizzasFromCustomer: function () {
                 return $http.get(API_URL + '/customer/pizzas');
             },
 
@@ -47,8 +49,12 @@ angular.module('services.crud', ['app.config'])
                 return $http.get(API_URL + '/pizza/suggestions');
             },
 
-            getReceiptFromcustomer: function () {
+            getReceiptFromCustomer: function () {
                 return $http.get(API_URL + '/customer/receipts');
-            }
+            },
+            addOrderToCustomer: function (order) {
+                return $http.post(API_URL + '/customer/order', order, {headers: {'Content-Type': 'application/json'}});
+            },
+
     }
     });
