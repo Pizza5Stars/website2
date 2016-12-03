@@ -1,0 +1,273 @@
+body{
+    background-image: url("http://reyesnypizza.com/images/background.jpg");
+    background-size: 100%;
+    background-attachment: fixed;
+}
+.container{
+    background-color:  #f2f2f2;
+    opacity: 80%;
+    width: 70%;
+}
+.main_container{
+    margin-bottom: 20px;
+}
+
+/*================================ Footer ================================*/
+footer{
+    background-color:  #404040;
+    padding-top: 10px;
+    color: darkgrey;
+    text-align: center;
+}
+.about-us a, a:hover {
+    text-decoration: none;
+    color: white;
+}
+.social-link a, a:hover{
+    text-decoration: none;
+    color: #377bb5;
+}
+
+/*================================ Header Btn ================================*/
+.btn-perso{
+    height: 110px;
+    border-radius: 23px;
+    border: none;
+    font-size: 25px;
+    margin: 10px;
+}
+.create-pizza-btn{
+    background-color: red;
+}
+.menu-pizza-btn{
+    background-color: white;
+}
+.my_pizza-pizza-btn{
+    background-color: green;
+}
+.white{
+    color: white;
+}
+.me{
+    color:red;
+}
+.nu{
+    color:green;
+}
+
+
+/*================================ NavBar ================================*/
+
+.pizza_header{
+    color: red;
+}
+.stars_header{
+    color: #008000;
+}
+.five_header{
+    color: white;
+}
+
+/*================================ Home Page ================================*/
+.pizza_rated_image{
+    width: 180px;
+}
+.panel_pizza_rated{
+    width: 90%;
+    height: 30%;
+    margin-left: 6%;
+}
+.stars_rated{
+    color: #FFCC00;
+}
+.size_pizza{
+    width: 60%;
+}
+
+
+/*================================ Create Pizza Page ================================*/
+
+.label_size{
+    font-size: 30px;
+    color: red;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.label_pizza_name{
+    font-size: 30px;
+    color: red;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.label_sauce{
+    font-size: 30px;
+    color: green;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.label_cheese{
+    font-size: 30px;
+    color: red;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.label_meat{
+    font-size: 30px;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.label_vegetables{
+    font-size: 30px;
+    color: green;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.label_dough{
+    font-size: 30px;
+    color:  #ffffff;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.price_pizza{
+    text-align: center;
+    font-size: 20px;
+}
+.container_create_pizza{
+    width: 80%;
+    margin-left: 10%;
+}
+.dollar{
+    border-color: black;
+}
+
+
+/*================================ My Profile ================================*/
+.form_pizza_location{
+    background-color: #D3D3D3;
+    width: 60%;
+    margin-left: 20%;
+    padding-left: 4%;
+    padding-right: 4%;
+    border-radius: 20px;
+    padding-bottom: 5%;
+}
+#location_zip{
+    width: 40%;
+}
+#location{
+    font-size: 30px;
+    color: #006400;
+}
+.container_pizza_profile{
+    width: 80%;
+    margin-left: 10%;
+}
+.price_pizza_saved{
+    font-size: 15px;
+}
+.zipcode{
+    width: 100px;
+}
+.save_it_button{
+    margin-right: 1%;
+}
+.my_addresses{
+    background-color:  grey;
+    border-radius: 20px;
+    text-align: center;
+    color: whitesmoke;
+}
+
+
+/*================================ My pizzas profile ================================*/
+
+.container_my_pizzas{
+    width: 80%;
+    margin-left: 10%;
+}
+.my_pizzas_title_saved{
+    color: green;
+    font-weight: bold;
+}
+.my_pizzas_title_ordered{
+    color: red;
+    font-weight: bold;
+}
+.pizza_details{
+    background-color:   #cccccc;
+    border-bottom-right-radius: 1em;
+    border-bottom-left-radius: 1em;
+    font-weight: bold;
+}
+.size_title_saved{
+    font-size: 20px;
+    color: red;
+    font-weight: bold;
+    margin-left: 2%;
+}
+.sizeName_pizza_{
+    text-transform: uppercase;
+}
+.ingredients_title_saved{
+    font-size: 20px;
+    color: green;
+    font-weight: bold;
+    margin-left: 2%;
+}
+.pizza_name_saved{
+    font-weight: bold;
+}
+.pizza_name_ordered{
+    font-weight: bold;
+}
+.total_order{
+    font-weight: bold;
+    font-size: 17px;
+}
+.cursor{
+    cursor: pointer;
+}
+
+
+/*=================================Pizza Menu================================*/
+
+.pizzamenu_title {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+}
+.card-pizza{
+    background: white url('../assets/background-pizza.jpg') no-repeat;
+    background-size: cover;
+    border:solid #f2f2f2 20px;
+    height: 240px;
+    border-radius: 37px;
+}
+.pizza-title{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+.ingredient-text{
+    color: green;
+    font-size: 21px;
+}
+.size-text{
+    color: red;
+    font-size: 21px;
+}
+.price-text{
+    color: blue;
+    font-size: 21px;
+    font-weight: bold;
+}
+.ingredients{
+    margin-bottom: 10px;
+    font-weight:bold;
+    font-size: 15px;
+}
+.size{
+    margin-bottom: 10px;
+    font-weight:bold;
+    font-size: 15px;
+}
+.price {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 15px;
+    padding-left: 0px;
+}

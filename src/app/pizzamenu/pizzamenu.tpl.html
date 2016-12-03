@@ -1,0 +1,31 @@
+
+    <h1 class="pizzamenu_title">Menu</h1>
+
+
+    <div class="row">
+        <div class="card-block card col-xs-6 card-pizza img-rounded" ng-repeat="pizzaSuggestion in pizzaSuggestions">
+            <h4 class="card-title pizza-title">{{pizzaSuggestion.name}}</h4>
+            <p class="ingredients">
+                <span class="ingredient-text">Ingredients :</span>
+                    <span class="card-text" ng-repeat="ingredient in pizzaSuggestion.ingredients">
+                   {{ingredient}},
+                    </span>
+            </p>
+            <p class="size">
+                <span class="size-text">Size : </span>
+                    <span class="text-uppercase">
+                        {{pizzaSuggestion.sizeName}}
+                    </span>
+            </p>
+            <div class="price col-xs-6">
+                <span class="price-text">Price : </span>
+                <span class="text-uppercase">
+                    {{calculatePrice(pizzaSuggestion)}}
+                </span> $
+            </div>
+            <div class="col-xs-offset-8 ">
+                <button class="btn btn-primary order" ng-click="addOrderToCustomer(pizzaSuggestion.id)">Order It !</button>
+
+            </div>
+        </div>
+    </div>

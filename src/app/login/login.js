@@ -23,7 +23,7 @@ angular.module('app.login', [
                 AuthService.login(credentials).then(function (user) {
                     $rootScope.$broadcast(AUTH_EVENTS.loginSuccess);
                     $scope.setCurrentUser(user);
-                    $state.go('configurator')
+                    $state.go('home')
                 }, function () {
                     alert('Login failed')
                     $rootScope.$broadcast(AUTH_EVENTS.loginFailed);

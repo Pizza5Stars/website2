@@ -1,0 +1,145 @@
+<script>
+    $(".add_location").hide();
+
+    $(document).ready(function(){
+        $("#add_loc_but").click(function(){
+            $(".add_location").fadeIn();
+            $(".saved_location").hide();
+        });
+
+        $("#cancel_add_loc").click(function(){
+            $(".add_location").hide();
+            $(".saved_location").fadeIn();
+        });
+
+
+
+    });
+</script>
+
+<div class="container_pizza_profile">
+<h1>Manage your pizza profile</h1>
+</br>
+
+
+    <div class="row">
+        <div class="col-sm-3">
+<ul class="nav nav-pills nav-stacked nav-static">
+    <li class="active"><a data-toggle="pill"  href="/pizzaprofile#account_setting">Account settings</a></li>
+    <li><a data-toggle="pill" href="/pizzaprofile#adress">Adress</a></li>
+</ul>
+            </div>
+
+<div class="tab-content col-sm-9">
+    <div id="account_setting" class="tab-pane fade in active">
+        <div class="form-group row">
+            <label for="firstname_input" class="col-xs-2 col-form-label">First Name</label>
+            <div class="col-xs-10">
+                <input class="form-control" type="text" value="{{currentUser.firstName}}" id="firstname_input">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="lastname_input" class="col-xs-2 col-form-label">Last Name</label>
+            <div class="col-xs-10">
+                <input class="form-control" type="text" value="{{currentUser.lastName}}" id="lastname_input">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="email_input" class="col-xs-2 col-form-label">Email</label>
+            <div class="col-xs-10">
+                <input class="form-control" type="email" value="{{currentUser.email}}" id="email_input">
+            </div>
+        </div>
+        <button type="button" class="btn btn-danger btn-lg pull-right">Save changes</button>
+    </div>
+
+    <div id="adress" class="tab-pane fade">
+        <div class="saved_location">
+        <h3>Saved adress</h3>
+            <div ng-repeat="address in myaddresses">
+                <div class="my_addresses">
+                <b>{{address.firstname}} {{address.lastname}}</b> </br>
+                {{address.housenumber}} {{address.street}}</br>
+                {{address.city}}, {{address.zipcode}}</br>
+                    <i class="fa fa-phone" aria-hidden="true"></i> {{address.phone}}
+                </div>
+                <br>
+
+            </div>
+
+
+
+            <button type="button" class="btn btn-danger btn-lg" id="add_loc_but">Add a location</button>
+</div>
+
+
+
+        <form class="add_location" ng-submit="addAddressToCustomer(address)" name="adressForm">
+
+            <div class="form-group row">
+                <label for="firstname" class="col-sm-4 col-form-label">First Name*: </label>
+                <div class="col-sm-8">
+                    <input required ng-model="address.firstname" class="form-control" type="text" placeholder="First name" id="firstname">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="lastname" class="col-sm-4 col-form-label">Last Name*: </label>
+                <div class="col-sm-8">
+                    <input required ng-model="address.lastname" class="form-control" type="text" placeholder="Last Name" id="lastname">
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+                <label for="housenumber" class="col-sm-4 col-form-label">House number*: </label>
+                <div class="col-sm-4">
+                    <input required ng-model="address.housenumber" class="form-control" type="text" placeholder="house number" id="housenumber">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="street" class="col-sm-4 col-form-label">Street adress*: </label>
+                <div class="col-sm-8">
+                    <input required ng-model="address.street" class="form-control" type="text" placeholder="Street adress" id="street">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="city" class="col-sm-4 col-form-label">City* : </label>
+                <div class="col-sm-8">
+                    <input required ng-model="address.city" class="form-control" type="text"  placeholder="City" id="city">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="zipcode" class="col-sm-4  col-form-label">Zip Code* : </label>
+                <div class="col-sm-3">
+                    <input required ng-model="address.zipcode" class="form-control zipcode" type="text" placeholder="Zip Code">
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+                <label for="phone" class="col-sm-4  col-form-label">Phone number* : </label>
+                <div class="col-sm-8">
+                    <input required ng-model="address.phone" class="form-control" type="tel" placeholder="Phone number" id="phone">
+                </div>
+            </div>
+
+
+            <button type="button" class="btn btn-secondary btn-lg" id="cancel_add_loc">Cancel</button>
+            <button type="submit" class="btn btn-danger btn-lg" id="save_adress" value="Submit">Save adress</button>
+
+</form>
+        </div>
+</div>
+
+
+
+    </div>
+
+</div>
+</div>

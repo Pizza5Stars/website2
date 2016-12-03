@@ -1,0 +1,49 @@
+
+    <div class="container_my_pizzas">
+        <h1 class="my_pizzas_title_saved">My saved pizza</h1>
+
+
+        <div class="list-group row">
+            <div ng-repeat="pizza in pizzas">
+                <div data-toggle="collapse" data-target="#{{pizza.id}}" class="cursor list-group-item">
+                    <img src="assets/pizza-3.png" alt="Size" class="col-xs-1">
+                    <span>
+                        <h4 class="list-group-item-heading pizza_name_saved col-xs-offset-2 col-xs-8">{{pizza.name}}
+                        </h4>
+                        <i class="fa fa-arrow-down fa-2x " aria-hidden="true"></i>
+                    </span>
+
+                </div>
+
+                <div  id="{{pizza.id}}" class="collapse">
+                    <div class="pizza_details">
+                       <span class="size_title_saved">Size:</span> <span class="sizeName_pizza_">{{pizza.sizeName}}</span><br>
+                    <span class="ingredients_title_saved">Ingredients : </span><span ng-repeat="ingredient in pizza.ingredients" class="list-group-item-text"> {{ingredient}},</span>
+                        <button type="button" class="btn btn-danger btn-lg pull-right" ng-click="addOrderToCustomer(pizza.id)">Order it</button><br><br>
+
+                    </div>
+                </div>
+
+
+            </div>
+            </div>
+
+
+
+    <h1 class="my_pizzas_title_ordered">My ordered pizza</h1>
+            <div ng-repeat="pizza in orderedpizzas">
+
+                            <ul class="list-group">
+                                <li class="list-group-item row">
+                                    <span class="tag tag-default tag-pill float-xs-right total_order">{{pizza.total}}$</span>
+                                    <img src="assets/pizza-3.png" alt="Size" class="col-xs-1">
+                                    <h4 ng-repeat="name in pizza.pizzas" class="list-group-item-heading pizza_name_ordered col-xs-offset-2 col-xs-8">{{name}}</h4>
+                                </li>
+
+                        </ul>
+            </div>
+
+
+
+
+            </div>
