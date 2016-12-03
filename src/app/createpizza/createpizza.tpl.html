@@ -1,0 +1,95 @@
+<div class="container_create_pizza">
+    <HR class="separator">
+
+    <div class="row">
+        <label class="col-sm-6 label_pizza_name">Name of your pizza :</label>
+        <div class="col-sm-6"><input  type="text" class="form-control" name="label_name", ng-model="pizzaName">    </div>
+
+
+    </div>
+
+    <HR class="separator">
+
+    <div class="row">
+        <div ng-init="size = 'assets/pizza-3.png'">
+            <img ng-src="{{size}}" alt="Size" height="42" width="42" class="pull-left">
+            <label class="col-sm-4 control-label">Size :</label>
+            <am-multiselect class="input-lg" multiple="false" ng-model="selectedSize" template-url="../vendor/amitava82-angular-multiselect/dist/multiselect.tmpl.html" ms-header="Select Your Size" options="size.name for size in sizes" change="calculatePrice()">
+            </am-multiselect>
+        </div>
+    </div>
+    <HR class="separator">
+
+    <div class="row">
+        <div ng-init="dough = 'assets/pizza-slice.png'" >
+            <img ng-src="{{dough}}" alt="Dough" height="42" width="42" class="pull-left">
+        </div>
+        <label class="col-sm-4 control-label">Dough :</label>
+        <am-multiselect  label="" class="input-lg" multiple="false" ng-model="selectedDough" template-url="../vendor/amitava82-angular-multiselect/dist/multiselect.tmpl.html" ms-header="Select Your Dough" options="ingredient.name for ingredient in getIngredientsByCategories('Dough')" change="calculatePrice()">
+        </am-multiselect>
+    </div>
+    <HR class="separator">
+
+    <div class="row">
+        <div ng-init="sauce = 'assets/suaces-bottle.png'">
+
+            <img ng-src="{{sauce}}" alt="Sauce" height="42" width="42" class="pull-left">
+
+            <label class="col-sm-4 control-label ">Sauce :</label>
+            <am-multiselect label="" class="input-lg" multiple="false" ng-model="selectedSauce" template-url="../vendor/amitava82-angular-multiselect/dist/multiselect.tmpl.html" ms-header="Select Your Sauce" options="ingredient.name for ingredient in getIngredientsByCategories('Sauce')" change="calculatePrice()">
+            </am-multiselect>
+        </div>
+    </div>
+    <HR class="separator">
+
+
+    <div class="row">
+        <div ng-init="cheese = 'assets/piece-of-cheese.png'">
+            <img ng-src="{{cheese}}" alt="Cheese" height="42" width="42" class="pull-left">
+            <label class="col-sm-4 control-label">Cheese :</label>
+            <am-multiselect label="" class="input-lg" multiple="true" ms-selected="{{selectedCheese.length}} Cheese(s) selected" ng-model="selectedCheese" template-url="../vendor/amitava82-angular-multiselect/dist/multiselect.tmpl.html" ms-header="Select Your Cheese" options="ingredient.name for ingredient in getIngredientsByCategories('Cheese')" change="calculatePrice()">
+            </am-multiselect>
+        </div>
+    </div>
+
+    <HR class="separator">
+
+    <div class="row">
+        <div ng-init="meat = 'assets/ham.png'">
+            <img ng-src="{{meat}}" alt="Meat" height="42" width="42" class="pull-left">
+            <label class="col-sm-4 control-label">Meat :</label>
+            <am-multiselect label="" class="input-lg" multiple="true" ms-selected="{{selectedMeat.length}} Meat(s) selected" ng-model="selectedMeat" template-url="../vendor/amitava82-angular-multiselect/dist/multiselect.tmpl.html" ms-header="Select Your Meat" options="ingredient.name for ingredient in getIngredientsByCategories('Meat')" change="calculatePrice()">
+            </am-multiselect>
+        </div>
+    </div>
+    <HR class="separator">
+    <div class="row">
+        <div ng-init="vegetables = 'assets/salad.png'">
+            <img ng-src="{{vegetables}}" alt="Vegetables" height="42" width="42" class="pull-left">
+            <label class="col-sm-4 control-label">Vegetables :</label>
+            <am-multiselect label="" class="input-lg" multiple="true" ms-selected="{{selectedVegetables.length}} Vegetable(s) selected" ng-model="selectedVegetables" template-url="../vendor/amitava82-angular-multiselect/dist/multiselect.tmpl.html" ms-header="Select Your Vegetable" options="ingredient.name for ingredient in getIngredientsByCategories('Vegetable')" change="calculatePrice()">
+            </am-multiselect>
+        </div>
+    </div>
+    <HR class="separator">
+</div>
+
+<div class="price_pizza">
+    <label>Price of your pizza:</label>
+</div>
+<div class="price_pizza">
+    <fieldset disabled>
+        <form class="form-inline">
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-addon dollar">$</div>
+                    <input type="text" class="form-control" id="exampleInputAmount" placeholder="Price" value="{{(totalPrice | number:2)}}">
+                </div>
+            </div>
+        </form>
+    </fieldset>
+</div>
+<button type="button" class="btn btn-danger btn-lg pull-right" ng-click="addOrderToCustomer()">Order it</button>
+
+
+

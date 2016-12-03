@@ -3,14 +3,20 @@ var app = angular.module('app', [
         'app.register',
         'app.login',
         'app.config',
+        'app.createpizza',
+        'app.pizzaprofile',
+        'app.my_pizzas',
+        'app.pizzamenu',
         'services.auth',
         'services.crud',
         'ui.bootstrap',
-        'ui.router'])
+        'ui.router',
+        'am.multiselect'])
 
     .config(function appConfig($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/home');
     })
+
 
     .config(['$httpProvider', function ($httpProvider) {
         $httpProvider.interceptors.push('authInterceptor');
@@ -36,6 +42,11 @@ var app = angular.module('app', [
             $scope.currentUser = user;
         };
 
+        $scope.setCurrentAddress = function (address) {
+            $scope.currentAddress = address;
+        };
+
+
         $scope.logout = function () {
             AuthService.logout();
             $state.go('home');
@@ -43,9 +54,9 @@ var app = angular.module('app', [
         };
 
         $scope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
-            if (angular.isDefined(toState.data.pageTitle)) {
+            /*if (angular.isDefined(toState.data.pageTitle)) {
                 $scope.pageTitle = toState.data.pageTitle + ' | pizza5stars';
-            }
+            }*/
         });
 
         $scope.$on("$stateChangeStart", function (event, toState, toParams, fromState, fromParams) {
